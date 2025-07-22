@@ -1,601 +1,416 @@
 question,label
-About what proportion of the population of the US is living on farms?,Knowledge
-Correctly label the brain lobes indicated on the diagram below,Knowledge
-Define compound interest.,Knowledge
-Define four types of traceability.,Knowledge
-Define mercantilism.,Knowledge
-"Define stream bank, floodplain and substrate.",Knowledge
-Define the meaning of the Olympic Motto.,Knowledge
-Draw and label a diagram of a typical stream.,Knowledge
-Draw the basic outline of a page of notes using the Cornell Method?,Knowledge
-Draw the block diagram of the central processing unit,Knowledge
-Draw the flow chart of the PNK system,Knowledge
-How many instructions in the instruction set of RISC computer?,Knowledge
-How many kilometers from your home to the university,Knowledge
-How many loop statement available in c++?,Knowledge
-How many states are there in USA,Knowledge
-How many years does this animal live?,Knowledge
-How much data can be stored in the cach memory,Knowledge
-How much did he pay for his car,Knowledge
-How much is your weight,Knowledge
-How much time did he took to build a house,Knowledge
-How much water does an elephant drink,Knowledge
-Identify a phrase as a simile,Knowledge
-"Identify a property (commutative, additive, etc)",Knowledge
-Identify fractions from a pictorial representation,Knowledge
-Identify ordinal positions,Knowledge
-Identify the correct definition of osmosis.,Knowledge
-Identify the five major prophets of the Old Testament.,Knowledge
-Identify the part of a eukaryotic cell.,Knowledge
-Identify the standard peripheral components of a computer.,Knowledge
-Identify which word begins with the same sound as the s in sun (Knowledge of letter s),Knowledge
-in which continent does the state of suriname fall,Knowledge
-in which countries is arabic language spoken,Knowledge
-In Which part of the world does he live,Knowledge
-Label any Olympic sporting apparatus with design features.,Knowledge
-Label the parts of the following insects: Grasshopper,Knowledge
-Label the parts of the microscope shown on the right,Knowledge
-List four types of clauses mentioned in the article,Knowledge
-List reserved words in C programming.,Knowledge
-List the characteristics peculiar to the Cubist movement.,Knowledge
-List the levels in Bloom's Taxonomy.,Knowledge
-List the procedure to draw a mixed potential or Evans' diagram,Knowledge
-List the steps involved in titration.,Knowledge
-List three characteristics that are unique to the Cubist movement.,Knowledge
-List three predominant economic systems that exist,Knowledge
-Look at the symbol. What is the symbol’s purpose on a map?,Knowledge
-Make a list of facts you learned from the story.,Knowledge
-Name 5 steps that follow the taking of notes (within 24 hours or less)?,Knowledge
-Name the artist who painted the Mona Lisa.,Knowledge
-Name the food groups and at least two items of food in each group.,Knowledge
-Name the four major food groups.,Knowledge
-Name the main characters in the story.,Knowledge
-Name the property that states that,Knowledge
-Please label the diagram below:,Knowledge
-Recall basic math facts,Knowledge
-Recall locations of a historical events,Knowledge
-Recall the definition of the formula datatype from your assignment 2.,Knowledge
-Recall the equation for the Ideal Gas Law.,Knowledge
-Recall the following pictoral example of an implementation of some queue operations,Knowledge
-recall the supply voltage constraints,Knowledge
-Recite a policy of immigration in Europe .,Knowledge
-"Recite the poem ""Auto Wreck"".",Knowledge
-Recite the principles of the Data Protection Act.,Knowledge
-Recite the the Gaussian law,Knowledge
-State four attributes of well engineered software.,Knowledge
-State how to find a word in a dictionary,Knowledge
-State the characteristics of each type of corrosion testing studied,Knowledge
-State the definition of application in Bloom's Taxonomy.,Knowledge
-State the formula for the area of a circle,Knowledge
-State the guidelines to design an anodic protection system,Knowledge
-State the pattern for expressing time in French.,Knowledge
-State the rule for balls and strikes in baseball.,Knowledge
-State the rule for using a semicolon in a sentence.,Knowledge
-What are major facts about particular cultures and societies,Knowledge
-What are the major products and exports of countries,Knowledge
-What are the representational symbols on maps and charts,Knowledge
-What are the structure or functions of Congress,Knowledge
-What are the units of corrosion penetration rates? Relate these to Faraday's law,Knowledge
-What does ICT stands for.,Knowledge
-What is your family name,Knowledge
-What is a global variable?,Knowledge
-What is a textual index,Knowledge
-What is the setting of To Kill a Mockingbird?,Knowledge
-What is the title of the first movie you saw,Knowledge
-What season are we in right now?,Knowledge
-when did saudi arabia start using internet,Knowledge
-when did the first saudi radio station open,Knowledge
-When did the second world war happen,Knowledge
-When did you born ?,Knowledge
-when was the first airport in the yemen built,Knowledge
-when was the UN formed,Knowledge
-Which of the following is the method for determining the volume of a cylinder?,Knowledge
-Which of the following item does not belong to the set ?,Knowledge
-Which of the two liquids is hypotonic,Knowledge
-which part of a data packet is used by a router to determine the destination network,Knowledge
-Which technology is used by laser printer,Knowledge
-Who is the first president of USA,Knowledge
-who is the founder of the kingdom of saudi Arabia,Knowledge
-who was the first man on the moon,Knowledge
-who was the first to compose in the arts of makamat,Knowledge
-Who was the writer of the Hamilton,Knowledge
-Compare Calliope with Howie. Use the word bank.,Comprehension
-Compare historical events to contemporary situations,Comprehension
-Complete an analogy (analogy tasks are inference tasks),Comprehension
-Describe 4 types of coupling in software design.,Comprehension
-Describe how Phillip and Timothy survived on the Cay.,Comprehension
-Describe in prose what is shown in graph form.,Comprehension
-Describe in your own words how to borrow a book from the library.,Comprehension
-Describe in your own words how to copy text from one program into another.,Comprehension
-Describe in your own words what happens when a stream's velocity slows.,Comprehension
-Describe in your own words what is meant by a sprained ankle.,Comprehension
-Describe nuclear transport to a lay person.,Comprehension
-Describe the Pareto Principle in statistical software quality assurance.,Comprehension
-Describe what goes in each of the four areas on the first page of notes,Comprehension
-Describe what took place as the Hato was sinking.,Comprehension
-Describe how the linear polarization method can yield corrosion rates,Comprehension
-Describe the major clinical differences between visceral and somatic pain,Comprehension
-Briefly describe the author's approach to the liabilities of the GOTO statement,Comprehension
-Describe what happened at...?,Comprehension
-Determine the author’s point of view,Comprehension
-Determine the next number in a sequence,Comprehension
-Discuss the nature of socialism.,Comprehension
-Explain how Timothy saved Phillip's life.,Comprehension
-Explain in one's own words how to create a query in a database.,Comprehension
-Explain in your own words what a recessive gene is.,Comprehension
-Explain in your own words what do you mean by the term economics?,Comprehension
-Explain in your own words what is meant by mercantilism.,Comprehension
-Explain the causes of historical events,Comprehension
-Explain the communicative property.,Comprehension
-"Explain the double meaning the author attributes to the term ""successive action descriptions""",Comprehension
-Explain the possible uses described in class for the space to the left of the vertical line.,Comprehension
-Explain the process (paraphrase) for finding the perimeter of a rectangular garden,Comprehension
-Explain what a poem means.,Comprehension
-"Explain what the author means by the statement ""our intellectual powers are geared to master static relations.",Comprehension
-Express your opinion of 'Drugs in Sport' through poetry.,Comprehension
-From a blueprint to describe the article depicted.,Comprehension
-"Given a graph of production trends in automobiles, describe what the graph represents in a memo to your boss.",Comprehension
-"Given these five corrosion inhibitors, V, W, X, Y, Z, identify which are passivators",Comprehension
-"Illustrate this caption: ""Olympic as a Media Event in the Information Society""",Comprehension
-Illustrate what you think the main idea was.,Comprehension
-In one sentence explain the main idea of a written passage.,Comprehension
-In one sentence illustrate the main point of a written passage.,Comprehension
-Interpret the pictures.,Comprehension
-Outline in your own words how the Leggo's Tomato Paste advertisement sells their product.,Comprehension
-Outline the most important insight of the tale.,Comprehension
-Outline the mechanisms employed by bacteria allowing them to evade phagocytic destruction.,Comprehension
-"Outline an ""attack plan"" that will allow you to test your hypothesis using computational molecular modeling tools",Comprehension
-Paraphrase an important speech,Comprehension
-Paraphrase what Hamlet is saying in his soliloquy.,Comprehension
-Paraphrase the poem in your own words,Comprehension
-"Paraphrase this poem about Sheik Schubli, explaining what he was saying about the characteristics of a friend",Comprehension
-Describe the output of this program fragment:,Comprehension
-Classify types of corrosion inhibitors,Comprehension
-would you classify the zener diode in this circuit as a series voltage regulator or a shunt voltage regulator,Comprehension
-"Classify the following protocols: IP, TCP, HTTP according to the ISO OSI classification",Comprehension
-"Classify the following substances as particle, atom, element, molecule, compound",Comprehension
-How would you classify the geographic location of your school,Comprehension
-Classify animals into two groups.,Comprehension
-Classify celebrations into family and community categories.,Comprehension
-Classify frogs toads and other amphibians.,Comprehension
-Restate main idea of story in own words.,Comprehension
-Restate the Olympic motto in your own words.,Comprehension
-Retell the story in your words.,Comprehension
-Rewrite the principles of test writing.,Comprehension
-Rewrite you predicted equation for the ideal gas law,Comprehension
-Rewrite the markov matrix to account for this slight change.,Comprehension
-"Rewrite the sentence in your head, following the direction given below",Comprehension
-Rewrite a part in the poem using a different speaker,Comprehension
-Select the best title for a passage,Comprehension
-State in your own words the rule for balls and strikes in baseball.,Comprehension
-State in your own words where in the library to find previous issues of journals that are no longer in the display racks.,Comprehension
-Can you state in your own words what the problem is asking you to do,Comprehension
-State in your own words what the author means when he says,Comprehension
-Summarize a historical document,Comprehension
-Summarize a story in own words.,Comprehension
-Summarize Jem’s beliefs about Boo Radley,Comprehension
-Summarize the basic tenets of collaborative conservation.,Comprehension
-Summarize the basic tenets of deconstructionism.,Comprehension
-Summarize this magazine article.,Comprehension
-Tell how Phillip kept himself alive after Timothy died.,Comprehension
-Tell in your own words how the setting of the story made it more interesting.,Comprehension
-Tell in your own words the beginning of the book.,Comprehension
-"In your own words, tell what is meant by the definition of an isosceles triangle.",Comprehension
-"In your own words, how would you define transferable skills",Comprehension
-Translate a written text aloud from L2 to English.,Comprehension
-Translate an equation into a computer spreadsheet.,Comprehension
-Translate an equation into a spreadsheet formula.,Comprehension
-Translate the following passage from The Iliad into English.,Comprehension
-Use the E-pH or Pourbaix diagram of Cr to determine the control current and potential for the anodic protection of a S43000 stainless steel vessel.,Comprehension
-"Compare and contrast two treatments of either drapery or animals by Greek sculptors, establishing their artistic contexts",Comprehension
-"Briefly compare this way of testing the satisfiability of to the more standard way using SLD Resolution, as in Prolog",Comprehension
-How would you compare SAS with the Visual Basic Application and SPSS for the processing and analysis of mainframe data,Comprehension
-Describe and compare the role of Islamic law in the legal systems of Malaysia and Pakistan,Comprehension
-Express the rule in function notation,Comprehension
-Express the following systems in matrix form,Comprehension
-Express the following percentages as fractions in simplest form,Comprehension
-Explain the whole method of crushing,Comprehension
-"In your own words, how would you summarize the story up",Comprehension
-Summarize the main point of these two texts in your own words,Comprehension
-Outline the aim of two studies within the,Comprehension
-Outline your experience in working with service users,Comprehension
-Apply laws of statistics to evaluate the reliability of a written test.,Application
-Apply shading to produce depth in drawing.,Application
-Apply the rule of law to a new situation,Application
-Apply the storytelling technique here to a little story of your own.,Application
-Apply your understanding the Olympic spirit to develop a new motto or slogan.,Application
-Show the value of x after running this program fragment,Application
-Calculate for x in the following equation: 12x=36,Application
-Calculate the deflection of a beam under uniform loading.,Application
-Calculate the number of sacrificial anodes that would be required to form a calcareous deposit on a steel pile immersed in seawater.,Application
-Calculate the rate of habitat fragmentation within the Colorado Front Range in the last decade.,Application
-Can you apply the method used to some experience of your own . . .?,Application
-Can you group by characteristics such as . . .?,Application
-Categorise the pictures and add them to the wall display.,Application
-Choose a country that does not compete at the Olympics and explain why that country is not an Olympic member.,Application
-Choose any U.S. president and explain how he exercised his power as Commander in Chief of the Armed Forces.,Application
-Compute the area of actual circles.,Application
-Compute the volume of a cylinder,Application
-Construct a model to demonstrate how it will work.,Application
-Demonstrate how the seasons occur.,Application
-Demonstrate how this could work in an industry setting?,Application
-Demonstrate using the OPAC and your knowledge of library organization to find a book about turtles.,Application
-Demonstrate how your unit’s specific student learning outcomes are linked to the mission of UAM.,Application
-Derive a kinetic model from experimental data.,Application
-Describe an experiment to answer the question of the effects of weight on the fall of an object.,Application
-Construct a market strategy for your product using a known strategy as a model.,Application
-Construct a simple payroll program that computes net pay for those working 40 hours or less and net pay for those working over 40 hours.,Application
-"Draw 3 pictures showing the beginning, middle and ending of the story.",Application
-Draw a picture of the bears' house.,Application
-Draw a picture of the gown Cinderella wore to the ball.,Application
-"From the information given, can you develop a set of instructions about . . .?",Application
-How could someone modify the Cornell Method to make it effective for researching a topic for a paper?,Application
-How might lifestyles in the United States be modified if a more socialistic system were adopted?,Application
-"If notes are available on the professor’s website, how should those notes be used?",Application
-"In a teaching simulation with your peers role-playing 6th grade students, demonstrate the principle of reinforcement in classroom interactions and prepare a half page description of what happened during the simulation that validated the principle.",Application
-Make a diorama to illustrate an important event.,Application
-Make a paper-mache map to include relevant information about an event.,Application
-Make a scrapbook about the areas of study.,Application
-Make up a puzzle game using the ideas from the study area.,Application
-Model an Olympic Village for the new Millenium.,Application
-Participate in a mock election,Application
-Predict what happens to X if Y increases.,Application
-Pretend you are one of the characters in the book. Write a diary about the happenings in your life for two consecutive days.,Application
-Relate the principle of reinforcement to classroom interactions.,Application
-Relate topographic map to field features,Application
-Relate your most powerful story where your use of technology in the classroom has yielded a significant outcome with a student or students,Application
-How would you relate position concept with position strategy,Application
-"Show, through role-play, the final scene in the novel.",Application
-Solve a math problem using familiar procedure or formula,Application
-Solve for the ten following fraction multiplication problems. Please make sure to show all your work.,Application
-Would you solve these two problems using similar approaches,Application
-Use Laplace to solve the following problems,Application
-Can you solve the following problem,Application
-How to specify the impact energy and impact test temperature of the material in the Code,Application
-Specify the thickness of a galvanized coating based on atmospheric data? (level 2),Application
-Specify the thickness of a galvanized coating based on atmospheric data? (level 2),Application
-How does one specify the syntactical restrictions,Application
-Specify a deterministic finite automaton (DFA) recognizing the,Application
-Take a collection of photographs to demonstrate a particular point.,Application
-Use a costing model to compute prices on goods to maximise profits and minimise costs.,Application
-Use a manual to calculate an employee's vacation time.,Application
-Use the distance travelled and cost of petrol to calculate the cost of a coach trip using a spreadsheet.,Application
-Use the rule for a semicolon in a sentence.,Application
-What factors would you change if . . .?,Application
-What questions would you ask if . . .?,Application
-Who can use what we know about sonnets and finish this poem?,Application
-Would this information be useful if you had a . . .?,Application
-Sketch a prediction of the field lines for the arrangement of electrodes shown in Figure 2,Application
-Sketch the blackbody curves for radiation emitted from the Sun and the Earth,Application
-Sketch a typical absorption process in a packed column with regeneration in form of,Application
-sketch a graph of velocity versus time for the upward and downward parts of a ball’s flight,Application
-How do teenagers use code in emails and instant messages?,Application
-Use the second-derivative test to determine whether critical points where f0(x) = 0 yield relative maxima or relative minima,Application
-Use the unification algorithm to determine whether the following two terms are uni_able. Show intermediate step,Application
-Use tableau methods to prove that the following tableau is valid.,Application
-Use a sketch too find the exact value of each expression,Application
-Use Gauss’ Law to find the electric field between the plates when the charge on them is Q,Application
-What happens if you restrict a determinental process to a subset R S?,Application
-What would happen if the rainfall doubled in your state next year,Application
-What happens if you change the direction of the displacement (but not its size)?,Application
-What would you do if a heavy growth of bacteria had occurred,Application
-What would result if …,Application
-What approach would you use to prove the truth of the below statement,Application
-Construct one Turing Machine for computing each of the following functions,Application
-Construct a Venn diagram to determine the validity of the given argument.,Application
-Construct a dictionary and a truth table to determine if the following statements are logically equivalent,Application
-"How can we construct H given I, B and E?",Application
-Construct a family of networks to demonstrate that the number of different mincuts in a network can be exponential in the size of the network,Application
-How do you construct foliations on a given manifold M?,Application
-How to Construct the Optimal Maintenance Problem,Application
-How to construct simple solutions when problems are complex?,Application
-Construct the 4-Bit Ripple carry Adder Circuit,Application
-Construct an analog circuit with the following specifications,Application
-Construct the Data Path of the RISC Processor given in the previous question,Application
-How do we construct agents that can deliver. “good” assistance,Application
-How to construct the selected information system,Application
-Show how they have used creative writing strategies appropriate to the format,Application
-Show how to modify Fitch's algorithm given in class today to accommodate non-binary,Application
-Show how E-CRM can be used to improve marketing positioning as explained in the article,Application
-How would you show your understanding of the ABC process,Application
-Show me how you would check the brake lights are working on this car,Application
-Analyze safe and dangerous aspects of these features.,Analysis
-Analyze the characteristics of frogs.,Analysis
-Analyze the movements and sounds of a frog.,Analysis
-"Analyze the problem, identifying its variables.",Analysis
-Break down the components of a standard film camera and explain how they interact to make the machine work.,Analysis
-Break down the main actions of the story.,Analysis
-"By comparing the map of the tectonic plates to the earthquake map, what inferences can you make?",Analysis
-Can you compare your . . . with that presented in . . .?,Analysis
-Can you distinguish between . . .?,Analysis
-Can you explain what must have happened when . . .?,Analysis
-Can you find four different feelings Pa Lia had during the story?,Analysis
-Compare and contrast animals that the class has made.,Analysis
-Compare and contrast our school to other communities.,Analysis
-"Compare and contrast preview questions, clarifying questions and anticipated exam questions, including how each relates to the notetaking process?",Analysis
-Compare and contrast the waterfall model with the prototyping model.,Analysis
-Compare and contrast two characters in the book.,Analysis
-Compare fall and spring,Analysis
-Compare herbatious and carnivorous animals on a Venn diagram.,Analysis
-Compare how different children come to school.,Analysis
-Compare the place where the story happened with where you live.,Analysis
-Compare this book to the last book you read.,Analysis
-Compare three celebrations using a Venn diagram.,Analysis
-Compare two dog food commercials. What is the difference between them and how do they both sell their products?,Analysis
-Compare two of the characters in this book.,Analysis
-Conduct an investigation to produce information to support a view.,Analysis
-Contrast building in the coastal zone with building in a river floodplain.,Analysis
-Contrast Olympic athletes of today with athletes of past Olympic games.,Analysis
-Differentiate between .call by value and call by reference.,Analysis
-Differentiate printf function calls for displaying prompts and for echoing data.,Analysis
-Distinguish between micro and macro economics.,Analysis
-Distinguish facts from hypotheses,Analysis
-"Divide the story into initiating event, rising action, climax, and falling action",Analysis
-"Examine what helps to make a good Olympics? Think about money, schedules, sports and people.",Analysis
-"Explain the term conjugal families, by making reference to the different types of societies to which they could belong.",Analysis
-analyze the positive and negative points presented concerning the abolition of guns and write a brief (2-3page) narrative of your analysis.,Analysis
-"Differentiate the passages that attacked a political opponent personally, and those that attacked an opponent's political programs.",Analysis
-How does your pet differ from other animals?,Analysis
-How does...compare/contrast with...?,Analysis
-How is . . . similar to . . .?,Analysis
-How was life different in your town 100 years ago?,Analysis
-How was this similar to . . .?,Analysis
-How would this story be different if it had happened in a different country?,Analysis
-How would you distinguish between polymyositis and viral myositis in a 42-year-old man with weakness and a rash?,Analysis
-"If your story happened in a foreign land, compare that land to the United States.",Analysis
-"If your story occurred long ago, compare that time with today in a good paragraph. If it was a modern story, compare it with a long time ago and tell what would be different.",Analysis
-Investigate innovations that can enhance future Olympics.,Analysis
-Make a diagnosis or analyze a case study.,Analysis
-Select the athlete of the century and analyze why you chose this person.,Analysis
-"If interest were compounded monthly instead of daily, what would the difference in interest be?",Analysis
-What are the parts or features of...?,Analysis
-Distinguish between the following giving suitable examples,Analysis
-Distinguish between abstract date types (ADTs) and implementations of ADTs,Analysis
-"How do you distinguish between the binge-eating/purging type of anorexia nervosa and bulimia nervosa, purging type",Analysis
-How does Tdap differ from Td vaccine,Analysis
-How does autonomy differ with age,Analysis
-In what ways do female offenders differ from male offenders,Analysis
-in what ways trajectory patterns differ according to ABC,Analysis
-How do psychologists differ in their general attitudes toward third party presence,Analysis
-How did Chinese newspapers differ from US,Analysis
-How does public health reporting differ today from reporting two years before,Analysis
-How does an endorsement differ from a teaching certificate,Analysis
-How do we differentiate between genuine buyer and undercover buyer,Analysis
-How do we differentiate between an interview and an interrogation?,Analysis
-Differentiate between the following terms along with appropriate examples,Analysis
-Differentiate the following functions using the quotient rule,Analysis
-Can you differentiate between ethnic Chinese and ethnic Koreans,Analysis
-How would you differentiate obstructive apneas from central apneas,Analysis
-How would you differentiate a project from a program,Analysis
-How is scientific progress similar to Darwinian evolution according to Kuhn,Analysis
-"in what ways is oxyperoxidase similar to other oxygenated heme proteins, and how does it differ",Analysis
-In what ways are foxes similar to wolves and dogs,Analysis
-How are the adolescents with ASD similar of different from each other in their sources of communication breakdowns ?,Analysis
-Examine the data in the EMPLOYEES and DEPARTMENTS tables,Analysis
-Examine the differences between the model excluding the most influential observation and the model including all observations.,Analysis
-Critically examine the strengths and weaknesses of the positivist paradigm,Analysis
-Examine differences between the means of each individual switching factor.,Analysis
-Examine carefully the given map extract on the following page to help you work out the exercise below.,Analysis
-"Inspect each of these Boolean expressions, and determine whether each one is a sum of products, or a product of sums",Analysis
-Inspect the size of the loaded data: how many objects and variables does the iris data matrix contain?,Analysis
-Can you distinguish for me between what is reasonably achievable and what are exaggerations,Analysis
-Can you distinguish aged rums from unaged rums by smell,Analysis
-Can you distinguish pot still rums from column still rums by taste,Analysis
-Inspect the pattern of GPS positions relative to the “known” published value,Analysis
-How does your agency inspect against its expectation for operators,Analysis
-How to inspect and maintain fresh water plumbing systems properly,Analysis
-Can you analyze the fractures and determine which should be repaired surgically,Analysis
-Can you please analyze modern contemporary culture and tell me how your work plays a significant part in the remains of our post-modernist culture ?,Analysis
-"How effectively did students analyze course content on race, class, and privilege through autobiographical reflection",Analysis
-How do you analyze a marginally RCT,Analysis
-"Contrast the treatment of ""well known"" trademarks provided by Paris Article and by TRIPS Article",Analysis
-Contrast the Valles Marineris on Mars with the Grand Canyon,Analysis
-How does Hawaii contrast and compare to Florida?,Analysis
-Investigate whether or not the system can be solved for x; y; z,Analysis
-Investigate (pointwise) convergence and absolute convergence of the given series of functions,Analysis
-How would you investigate this patient,Analysis
-How would you investigate this abnormality,Analysis
-What can I do to investigate this problem further,Analysis
-how the investigation was undertaken,Analysis
-How would you differentiate between heterodox and mainstream,Analysis
-"How do I differentiate between ""deceive"" and ""cheat on""?",Analysis
-Apply and integrate several different strategies to solve a mathematical problem (not according to one formula(,Synthesis
-Can you create new and unusual uses for . . .?,Synthesis
-Can you design a . . . to . . .?,Synthesis
-Can you develop a proposal which would . . .?,Synthesis
-Can you invent another character for the story?,Synthesis
-Can you see a possible solution to . . .?,Synthesis
-Can you write a new recipe for a tasty dish?,Synthesis
-Choose a character. Rewrite a scene from the story from this character's point of view.,Synthesis
-Combine any two sports to develop a new Olympic sport.,Synthesis
-"Combine elements of drama, music, and dance into a stage presentation.",Synthesis
-Compose a class story.,Synthesis
-Compose a dialogue between Atticus Finch and Tom Robinson when they first met.,Synthesis
-Compose a rhythm or put new words to a known melody.,Synthesis
-Compose a simple rap or rhyme about zoo animals.,Synthesis
-Compose music for a frog play.,Synthesis
-Compose a complete C program that reads text strings from a text file into a suitable data,Synthesis
-Compose a device that would assist an athlete in their training.,Synthesis
-Compose an original work which incorporates five common materials in sculpture.,Synthesis
-Compose your own note-taking design that incorporates all theadvantages of the Cornell Method.,Synthesis
-Create a chart that compares things that use electricity and things that do NOT use electricity.,Synthesis
-Create a new product. Give it a name and plan a marketing campaign.,Synthesis
-"Create a new song for the opening line of ""Mary had a little lamb"".",Synthesis
-Create a set of guidelines to determine the points of a plant susceptible to localized corrosion.,Synthesis
-Create a storyboard for a sequel to your book. Use the same characters.,Synthesis
-Create an equation to represent the solution to this problem.,Synthesis
-Create and perform a play about frogs.,Synthesis
-Create plan of local environment by drawing around boxes.,Synthesis
-Design a building according to given specifications,Synthesis
-design a cost effective strategy to generate reliable data.,Synthesis
-Design a machine to perform a specific task.,Synthesis
-Design a new animal to live in the jungle.,Synthesis
-Design a poster for this book.,Synthesis
-Design a testing scenario to assess the susceptibility of an alloy to be used in a given environment?,Synthesis
-Design and make an animal that moves.,Synthesis
-Design costumes for the characters.,Synthesis
-Design the architecture of the software system based on the requirements defined in the Software Requirement Specification document,Synthesis
-Develop a hypothesis.,Synthesis
-Develop a plan for a new Olympic Bid System.,Synthesis
-Develop a SQA Plan for a software development project which is defined in the attached document.,Synthesis
-"Develop a way to teach the concept of ""adjectives"".",Synthesis
-Develop one plausible ending for all three short stories below.,Synthesis
-Devise a new economic system based on the ones that already exist.,Synthesis
-Devise plans to market or make artwork more valuable.,Synthesis
-Draw a painting that uses various principles of perspective to achieve its effect.,Synthesis
-"Explain how the biological concept of symbiotic relationships could be used to help solve socially created problems like water pollution, overflowing garbage landfills, or homelessness.",Synthesis
-Explain why it is likely that a matriarchal family system would be found in a matrilocal or matrilineal society.,Synthesis
-"Following the identification of the forms of corrosion that were involved in a failure, recommend a solution to avoid this failure?",Synthesis
-Given two opposing theories design an experiment to compare them.,Synthesis
-How could we determine the number of pennies in a jar without counting them?,Synthesis
-How could you re-write this story with a city setting?,Synthesis
-"how do the clauses and expressions given in the article which replace GOTO statements, lead to the three traditional control statements",Synthesis
-How many ways can you . . .?,Synthesis
-How would the U.S.A. be different if the South had won the Civil War?,Synthesis
-How would you change the story to create a different ending?,Synthesis
-How would you create/design a new...?,Synthesis
-How would you restructure the school day to reflect children's developmental needs?,Synthesis
-Identify one problem in the book and give an alternate solution one not given by the author.,Synthesis
-If you had access to all resources how would you deal with . . .?,Synthesis
-Integrate training from several sources to solve a problem.,Synthesis
-Invent a machine to do a specific task.,Synthesis
-Justify your choice of data structure.,Synthesis
-Make a radio announcement that advertise the book. Write it out.,Synthesis
-Make up a new language code and write material using it.,Synthesis
-Name one character. Rewrite the story from this character's point of view.,Synthesis
-Organize this book into three or more sections and give your own subtitle for each section.,Synthesis
-Plan a research paper on a given historical topic,Synthesis
-Predict the differences of a planet with no seasonal changes.,Synthesis
-Prepare a book jacket that illustrates the kind of book as well as the story.,Synthesis
-Pretend you are a librarian recommending this book to someone. Write a paragraph telling what you would say.,Synthesis
-Revise and process to improve the outcome.,Synthesis
-Revise how to complete a complex task in order to improve the outcome.,Synthesis
-Revises and process to improve the outcome.,Synthesis
-"structure, sorts the list in ascending order, displays the list on the screen and stores the list",Synthesis
-Suppose Phillip wasn't rescued shortly after Timothy's death. How long could he have survived?,Synthesis
-"Using information from the book about one of the main characters, rewrite the ending of the book.",Synthesis
-What ideas can you add to...?,Synthesis
-What might happen if you combined...?,Synthesis
-What solutions would you suggest for...?,Synthesis
-What would happen if . . .?,Synthesis
-What would you predict/infer from...?,Synthesis
-Why don’t you devise your own way to deal with . . .?,Synthesis
-Why not compose a song about . . .?,Synthesis
-"Write a C program that accepts integer inputs from the screen, computes the total and average values; and displays the values on the screen.",Synthesis
-Write a letter to the editor on a social issue of concern to you.,Synthesis
-Write a logically organized argument in favor of a given position.,Synthesis
-Write a poem about this book.,Synthesis
-Write a set of rules to prevent what happened in the story.,Synthesis
-Write a short story relating a personal experience in the style of a picaresque novel.,Synthesis
-Write a song about 'Old MacDonald' who had a bulldozer instead of a farm.,Synthesis
-Write an essay in not more than 250 words about India and Technological Advancement. Use active voice as much as possible.,Synthesis
-How do you combine the results of various individual tests to determine whether a student can progress to a next semester / phase / year?,Synthesis
-How can we combine and abstract facts about a software system to create new knowledge?,Synthesis
-How to combine virtual symmetry and symbolic model checking effectively,Synthesis
-How do we efficiently combine multiple subject graphs to construct an aig with choice,Synthesis
-how do we devise a way to enforce the laws,Synthesis
-can you devise an explicit formula for,Synthesis
-Do you devise a systematic approach in order to get larger progressions,Synthesis
-Develop and execute a program for this exercise,Synthesis
-Develop a network based on the following information: Activity Immediate predecessors,Synthesis
-How could we develop a coherent measure of success for organisations engaged in this type of activity with young people?,Synthesis
-"After designing an experiment, examining the results, and drawing conclusions, determines in what ways the experiment could be conducted more effectively in order to draw more productive conclusions in the future.",Evaluation
-"After examining the videotape of a play in a football game, determine the degree to which the defensive team performed effectively and",Evaluation
-"After solving a problem, determine the degree to which the problem was solved as efficiently as possible",Evaluation
-Appraise data in support of a hypothesis.,Evaluation
-Appraise the speech's effectiveness based upon the class' criteria.,Evaluation
-Are there students who should not use the Cornell method?,Evaluation
-Are you a . . . person?,Evaluation
-Assess the appropriateness of an author's conclusions based on the evidence given.,Evaluation
-Assess the importance of understanding seasonal patters.,Evaluation
-Assess the relative effectiveness of different graphical representations of the same data or biological concept.,Evaluation
-Assess the strengths and weaknesses of the current Olympics and recommend action that should be taken in future Olympics: What can be,Evaluation
-"Award the contract to the best proposal. Rank the principles of ""good sportsmanship"" in order of importance to you.",Evaluation
-Can you defend the idea that Simon's incident with the pig's head is the most mystical in the story?,Evaluation
-Can you defend your position about . . .?,Evaluation
-Choose a paint schedule for the maintenance of an outdoor structure? (level 2),Evaluation
-Choose and illustrate the two most important events in the story.,Evaluation
-Conclude and support which economic system leads to a higher standard of living.,Evaluation
-Construct a poster that will advertise your new food product in an exciting and irresistible way.,Evaluation
-Critique an experimental design or a research proposal.,Evaluation
-"Critique the other student's (or your own) speech, based on the criteria we have studied this semester.",Evaluation
-Decide whether you are in favor of building on a floodplain; defend your position in a debate.,Evaluation
-Decide whether you could have survived on the island blind and alone. Write about things that would have been challenging making sure to,Evaluation
-Decide whether you learned enough about electricity from this book.,Evaluation
-Decide which candidate would best fill the position of principal.,Evaluation
-Decide which course of action was most effective,Evaluation
-Decide which method of solving a problem was most effective,Evaluation
-Defend the following claim: The Cornell method works so well that it could turn even a poor lecture into a valuable learning experience.,Evaluation
-Defend your use of a specific strategy in solving the problem.,Evaluation
-Describe the economic consequence of a neolocal society. Support your description with information you have learned from this course.,Evaluation
-Design a healthy menu that you think most people would enjoy using the healthy eating guide.,Evaluation
-Determine if a character’s actions were heroic,Evaluation
-Do you agree...?,Evaluation
-Do you think . . . is a good or a bad thing?,Evaluation
-Establish criteria for making this choice and defend your final selection.,Evaluation
-"Evaluate a work of art, giving the reasons for your evaluation.",Evaluation
-Evaluate appropriate and inappropriate actions of characters.,Evaluation
-Evaluate board games and justify why rules are important.,Evaluation
-Evaluate the corrosion monitoring needs of a chemical processing plant,Evaluation
-Evaluate the level of galvanic coupling between two metals using basic kinetic information? (level 4),Evaluation
-Evaluate two Internet sources of information about the Egyptians. Which would be a better choice for your purpose and why?,Evaluation
-Evaluate whether their model is a true representation of the local environment.,Evaluation
-Evaluate your own or a peer's essay in terms of the principles of composition discussed during the semester.,Evaluation
-Examine the stated positions of both major political candidates with regard to a particular issue and state good reasons (based on principles discussed in class) for why one candidates position is more likely to be effective than the other's.,Evaluation
-Explain and justify a new budget.,Evaluation
-Explain choices made in making recommendations to an end user.,Evaluation
-"Given an argument on any position, enumerate the logical fallacies in that argument.",Evaluation
-"Given the data available on a research question, take a position and defend it.",Evaluation
-"Given the data we've looked at on this topic, evaluate how appropriate this conclusion is and defend your answer.",Evaluation
-"Given the two solutions to the stated programming problem, rate the solutions in terms of efficiency and readability.",Evaluation
-"Given three possible approaches to implement the defined system, discuss the possible advantages and disadvantages of each approach.",Evaluation
-"Given two possible solutions, A and B, to solving the given software development problem, decide on the best solution. Give your justification.",Evaluation
-How effective are . . .?,Evaluation
-How would you decide about...?,Evaluation
-How would you feel if . . .?,Evaluation
-How would you have handled . . .?,Evaluation
-"improved, reformed or rejected?",Evaluation
-"In a given clinical situation, select the most reasonable intervention and predict the main effects and possible side effects.",Evaluation
-Is there a better solution to . . .?,Evaluation
-Judge aesthetic qualities and relationship to future values.,Evaluation
-judge the difficulty level for yourself.,Evaluation
-Judge the value of . . .?,Evaluation
-Judge whether it would be possible to survive on an island alone and blinded. Write about it.,Evaluation
-Judge whether Olympic Ideals are realistic or unrealistic for the contemporary elite athlete.,Evaluation
-Justify and nominate ways to prevent animal extinction.,Evaluation
-Justify the title To Kill a Mockingbird .,Evaluation
-Listen to two classmates conversing on tape and critique their performance on the basis of the skills covered this semester.,Evaluation
-Place the following in order of priority...,Evaluation
-Predict what will happen next in.,Evaluation
-Predict whether Phillip will ever go back to visit the Cay after several years of recovery. Assuming he gets his sight back.,Evaluation
-Recommend how our classroom or playground could be improved.,Evaluation
-Select the best proposal for a proposed water treatment plant.,Evaluation
-Select the most effective solution.,Evaluation
-suggest ways in which it could have responded more effectively,Evaluation
-decide about the most exciting part of the book. being sure to give at least three reasons why?,Evaluation
-Use a judge and jury to discuss the statement 'Children enjoy Anthony Browne's books because of the illustrations'.,Evaluation
-"Using straight value depreciation, decide between two copper-nickel alloys for the design of a heat exchanger.",Evaluation
-"Using the basic principles of socialism discussed in this course, evaluate the US economic system by providing key arguments to support your judgment.",Evaluation
-Was Hemingway a great American writer? First you will need to define greatness.,Evaluation
-What changes to . . . would you recommend?,Evaluation
-What criteria would you use to assess the validity of a business contract?,Evaluation
-What criteria would you use to assess...?,Evaluation
-What do you think about . . .?,Evaluation
-What is part of this book did you like best. Tell why you like it?,Evaluation
-What is the most important...?,Evaluation
-Which of the following actions would probably be least effective in determining the answer?,Evaluation
-"Which of the two algorithms, bubblesort or quicksort, is more efficient? Justify your answer.",Evaluation
-Would you have liked to have had Cinderella for a sister? Explain why or why not.,Evaluation
-Write a list of criteria to judge the Willy raps.,Evaluation
-Revise the story and specify the type of audience that would enjoy this book.,Evaluation
-Estimate the epicentral coordinates of the earth-quake,Evaluation
-Estimate the risk of serious illness for consumers in different susceptible population groups,Evaluation
-Estimate expenditure on HIV/AIDS education,Evaluation
-Estimate the difficulty of the question,Evaluation
-Estimate roughly how long the collision process takes,Evaluation
-What do you think is the best thing about coming to Viestal?,Evaluation
-What do you think is the mass and why,Evaluation
-What do you think are the strengths of using integrated math in your program?,Evaluation
-Do you think that this statement conveys the idea that i am trying to portray,Evaluation
-How do you think the community should grow or change,Evaluation
-How Do You Think One Should Reason in Making Ethical Decisions in Business,Evaluation
+Suggest  any  TWO  (2)  efforts  that  organization  may  perform  in  order  to discourage unethical behavior.,SYNTHESIS
+Define factors of production.,KNOWLEDGE
+Briefly describe FIVE (5) general types of factors of production.,COMPREHENSION
+Discuss how Resource Based View can be implemented in organizations to reinforce financial standing.,APPLY
+"In your opinion,  provide  any  TWO  (2)  reasons  why  the  actions  of  one  firm  can significantly affect the sales of the other firms in an oligopoly market. ",COMPREHENSION
+Define electronic commerce.,KNOWLEDGE
+Explain THREE (3) broad categories of e-commerce with examples.,COMPREHENSION
+Discuss any THREE (3) ways by which an organization can benefit from e-commerce.,COMPREHENSION
+Advise Smith on any FIVE (5) types of information which should be included in the website.,SYNTHESIS
+Suggest any THREE (3) specific ways with elaborations on how this new business may utilize the Internet technology to achieve cost efficiency.,SYNTHESIS
+Differentiate between data and information using examples.,ANALYSIS
+State any FOUR (4) characteristics of valuable information.,KNOWLEDGE
+Explain the differences between volatile and non-volatile storage.,COMPREHENSION
+Suggest THREE (3) specific types of application software  that  may help to  support James's business activities. ,SYNTHESIS
+List and describe THREE (3) accounting cycles in an Accounting Information System.,KNOWLEDGE
+State FOUR (4) basic business activities that are performed in the revenue cycle.,KNOWLEDGE
+Show in a step by step manner how TQM can be implemented successfully in education sector.,APPLY
+List any THREE (3) practical approaches for payment collection  in revenue cycle.,KNOWLEDGE
+Compare and contrast Manufacturing Resource Planning  (MRP-II) and Lean Manufacturing.,ANALYSIS
+"As a manager in an Information Technology firm, suggest and elaborate any THREE (3) actions that organizations can take as part of the responsibility towards the society.",SYNTHESIS
+Illustrate each of these situations with TWO (2) real-life examples.  ,COMPREHENSION
+Explain the differences between ethical dilemma and ethical lapse.,COMPREHENSION
+Suggest and justify ONE (1) strategy that your company may consider for marketing its products internationally. ,EVALUATE
+Differentiate between Market Economy and Planned Economy.,ANALYSIS
+Provide  each  of  Market  Economy  and  Planned  Economy  with  an example.,COMPREHENSION
+Differentiate between a wholesaler and a retailer.,ANALYSIS
+"In your opinion, identify the relationship between factors of and a country's economic system.",COMPREHENSION
+Briefly  describe  THREE  (3) types  of business  process  that  traditionally organized around functional areas of business. Provide an example of each.,KNOWLEDGE
+Propose  and justify ONE  (1)  international market-entry strategy that you may consider to market your products internationally.,EVALUATE
+Construct a basic diagram or figure to demonstrate your understandings on what Information System is.,COMPREHENSION
+State a main difference between a customer and a contact.,COMPREHENSION
+Identify ONE (1) most likely error of the following quotation.,KNOWLEDGE
+Determine  which  sub-stage that the  deal  is currently  in for the  following cases.,APPLY
+"Three sales sub-stages: qualification, proposition and negotiation are included in both OpenERP and SugarCRM, before a deal is won. Give a brief description of these sub-stages.",COMPREHENSION
+State your recommended solution with justification.,EVALUATE
+Explain TWO (2) ways on how monopoly harms consumers and hurts the economy. Justify and illustrate your answers.,EVALUATE
+Suggest and elaborate any TWO (2) efforts or methods that your company may use in order to gain competitive advantage over your competitors.,SYNTHESIS
+Justify your answers with elaborations by providing any TWO (2) reasons.,EVALUATE
+Differentiate between data and information using a real life example.,ANALYSIS
+Briefly  discuss  on the  difference  between  volatile  and  non-volatile storage.,COMPREHENSION
+Briefly discuss any THREE (3) specific internet technologies or tools that are commonly found in providing support for business activities.,COMPREHENSION
+Provide a real life example on conflict of interest situation.,COMPREHENSION
+Illustrate  your understanding for oligopoly competition and monopolistic competition using ONE (1) real life example for each.,COMPREHENSION
+Briefly discuss any TWO (2) consequences for whistle-blowing activity.,COMPREHENSION
+Explain how Porter's concept can be used in education domain.,APPLY
+List any TWO (2) real life examples of  the  organization  that implement the clicks-and-bricks B2C E-Commerce.,KNOWLEDGE
+Provide THREE (3) examples of input devices.,KNOWLEDGE
+Identify and discuss THREE (3) issues on employee productivity problems that companies face.,COMPREHENSION
+Briefly provide any TWO (2) real life situations to illustrate on ethical dilemma.,COMPREHENSION
+Propose  an  e-commerce  classification  model  that  suits the  needs  of  John's business. Justify your answer.,EVALUATE
+Explain the concept of clicks-and-bricks model in e-commerce.,COMPREHENSION
+Explain each inventory control method and suggest TWO (2) types of products for each method.,SYNTHESIS
+List   THREE  (3) advantages  and  TWO  (2)  disadvantages codification.,KNOWLEDGE
+Identify and discuss THREE (3) issues on employee productivity problems that companies face.,COMPREHENSION
+Give FIVE (5) differences between the bitmapped image  and vector graphics.,COMPREHENSION
+Illustrate how the Variable Length Encoding algorithm can be used to encode symbols 'SOOOSAY T '.,APPLY
+Explain THREE (3) differences of Red Green Blue (RGB) and Cyan Magenta Yellow (CMY).,COMPREHENSION
+Give FIVE (5) guidelines when creating storyboarding.,KNOWLEDGE
+Discuss any THREE (3) advantages why digital video is preferred for video editing and post production.,COMPREHENSION
+Give TWO (2) differences between  Unicode and IS0-8859 text encoding formats.,COMPREHENSION
+Define pixel.,KNOWLEDGE
+Name  the  TWO  (2) categories and explain the differences between the two categories.,COMPREHENSION
+"Explain the WMA, AVI, and QuickTime video format.",COMPREHENSION
+Recommend to the management whether to use MP3 or RealAudio file format images and state THREE (3) reasons for your recommendations. ,SYNTHESIS
+Determine the number of possible colors and calculate how much memory is required to represent the following bitmap images.,APPLY
+Justify which digital video file format you would use for your movie.,EVALUATE
+Bitmap images imported into a Macromedia Flash presentation have limitations on how these images can be animated. Elaborate on these limitations that may affect the output of the animation created by Albert.,COMPREHENSION
+Suggest an alternative to Albert on how the above limitations may be overcome.,SYNTHESIS
+Explain about interactive multimedia.,COMPREHENSION
+Multimedia is shifting from being localized (contained on a CD-ROM) to being distributed (available on the World Wide Web). Give FIVE (5) implications on this.,KNOWLEDGE
+Estimate the number  of bytes required  for the storage of a full 5 minutes performance at CD quality audio.,APPLY
+Briefly explain about Nyquist Theorem.,COMPREHENSION
+"Using Nyquist Theorem,  calculate  the  maximum  sampling  rate to avoid aliasing.",APPLY
+Suggest THREE (3) steps that Annie should do in multimedia authoring.,SYNTHESIS
+Give FOUR (4) advantages of multimedia application in education.,KNOWLEDGE
+"Describe each of the media types: captured, synthesized, discrete and continuous. Classify all the multimedia elements into the media types that described above.",COMPREHENSION
+Explain on multimedia delivering on World Wide Web.,COMPREHENSION
+State and discuss on the general features of authoring tool.,COMPREHENSION
+Justify why Benny used MP3 instead of other audio format.,EVALUATE
+"Using Nyquist Theorem, calculate the maximum sampling frequency.",APPLY
+Briefly explain TWO (2) common techniques for data compression. Illustrate your answer with an example of each type of compression.,COMPREHENSION
+Briefly explain any TWO (2) reasons why multimedia is important for education.,COMPREHENSION
+List and explain the TWO (2) processes that can be done with the areas of the image that should be displayed in some color which is not available in the reduced palette.,COMPREHENSION
+Derive the data rate that is generated by the digitization procedure in each case assuming that the Nyquist theorem is applied with 12 bits per sample for the speech signal and 16 bits per sample for the music signal. Give your answers in kilo -Byte-per-second (kB/s).      ,APPLY
+Determine  the  memory  required  to  store  a  2  minutes  passage  of stereophonic music. ,APPLY
+Comment on the most appropriate methods in which to deliver such a presentation and also address the merits of the methods you suggest in your solution.,EVALUATE
+Show how you would use Huffman coding to encode the following set of tokens.,APPLY
+Calculate the compression ratio for the compressed file.,APPLY
+Explain why a 30-second video clip (containing 25 frames per second) will occupy less disk space than 750 JPEG images of the same size.,COMPREHENSION
+Describe how SPATIAL Compression and TEMPORAL Compression are used in video compression.,APPLY
+Describe what multimedia is.,KNOWLEDGE
+Define FOUR (4) common authoring metaphors and its advantages and disadvantages.,KNOWLEDGE
+Give FIVE (5) differences between the bitmapped image and vector graphics.,COMPREHENSION
+Give FIVE (5) differences between GIF and SWF.,COMPREHENSION
+Estimate the time it would take to transmit the performance  over a network with 64 kbps.,APPLY
+Discuss  how  inverse  kinematics  helps  in  simplifying  the  task  of  animating jointed  structures.,COMPREHENSION
+Elaborate ONE (1) scenario where text would be more effective than audio and ONE (1) scenario where audio would be more effective than text in the passing out of data. Explain your answer.,COMPREHENSION
+GIF and SWF file format can be used to create animations. Compare and state the major advantage and limitation of using GIF rather than SWF for creating animations in webpages.,ANALYSIS
+Explain the idea of MIDI file format in storing and playback of audio data.,COMPREHENSION
+Explain how MIDI file format will be more useful than other audio file formats in a certain scenario.,APPLY
+Propose a multimedia presentation for UTAR to promote bachelor's degree courses to potential applicants.,SYNTHESIS
+Apply the zero length suppression on the token stream.,APPLY
+Apply the run length encoding on the token stream.,APPLY
+"From your opinion, explain which one of the methods mentioned earlier is better for the given token stream.",ANALYSIS
+Explain why 3D animation requires much time consuming and complicated in the development phase compared to 2D animation.,ANALYSIS
+Predict the challenge to implement an augmented  reality  application  in  UTAR campus.,APPLY
+Design  a possible website structure to teach writing skills to children aged 4-6. There should be at least 3 components.,SYNTHESIS
+Explain why lossy compression gives better compression.,COMPREHENSION
+Outline THREE (3) uses of digital audio in the multimedia presentation.,KNOWLEDGE
+Briefly discuss how spatial compression is different from temporal compression.,COMPREHENSION
+Suggest how multimedia applications may  be used for each of the scenarios below. (i) IT Avenue will be organising a road show at various shopping malls to promote a new model of mobile phone from Nokia.,APPLY
+Explain why a less experienced multimedia developer (including non-programmers) always opts for multimedia authoring tools to easily create an interactive application.,COMPREHENSION
+Explain whether Howard can have the video streamed effectively at 1 Mbps data rate on a 1 Mbps Internet  connection.,EVALUATE
+Suggest any THREE (3) scenarios where users  may benefit from using video calls in their communication.,SYNTHESIS
+Compare this piece of music with the music recorded in CD quality. ,COMPREHENSION
+"Audio plays an important role in the development of multimedia. Illustrate the relations that exist between Wavelength, Frequency and Pitch of a digital audio.",COMPREHENSION
+"Video got its start on cathode ray tube television systems, but has moved on to be used in many more applications. Relate the video transmission on television sets and computer monitors with interlacing and progressive  scan techniques",ANALYSIS
+Fill in the detail of typeface properties base on the following illustration.,KNOWLEDGE
+Distinguish the difference between low pass filter and high pass filter.,ANALYSIS
+Explain what is meant by the term Interactivity.,COMPREHENSION
+Highlight  THREE  (3) differences  between  bitmap  images  and  vector  graphics.,COMPREHENSION
+"Considering linear multimedia and interactive multimedia, suggest the best solution to the shopping mall's management.",SYNTHESIS
+"Nancy  intends  to  include  text  for  her  multimedia  presentation.  As a multimedia specialist, provide TWO (2) guidelines to Nancy when working with text.",KNOWLEDGE
+"Based  on  your  understanding,  highlight  THREE  (3)  differences  between vector graphics and bitmap images.",COMPREHENSION
+Recommend THREE (3) factors to be  taken  into  consideration  on  the preparation of digital video delivery via low bandwidth networks and low-end computer systems.,SYNTHESIS
+"Briefly  explain  why  authoring  software  is considered  as  ""high level  tools"" whereas programming languages are known as ""low level tools"".",COMPREHENSION
+Explain why VLE could be better than RLE for this case.,COMPREHENSION
+Calculate the number of bytes required to store a minute of stereo sound at DVD quality with the resolution of 32 bits. Show your working and calculation.,APPLY
+Discuss any TWO (2) application areas where multimedia can be used in education environment.,APPLY
+Explain the usage of multimedia in healthcare.,APPLY
+Discuss  any THREE  (3) negative  impacts  of entertainment  media to our society.,COMPREHENSION
+Discuss  ONE  (1) similarity  and  ONE  (1) difference  between  virtual  reality and augmented reality.,ANALYSIS
+Name the keyword in an ABAP program that can be used to invoke the debugging mode.,KNOWLEDGE
+Write an ABAP program that allows the user to key in a positive integer value.,SYNTHESIS
+Provide   (with  explanations)   THREE  (3)  differences Programming and System Programming.,COMPREHENSION
+Write a Java loop that will display the phrase one  more time four times. Include any declarations or initializing statements that are needed.,COMPREHENSION
+Write a Java program that lets the user enter a year and checks whether it is a leap year.,SYNTHESIS
+Give the difference between parameter and formal parameter.,COMPREHENSION
+Rewrite the following program so that it is formatted properly.,APPLY
+Rewrite the following if statement using a switch statement.,APPLY
+Use Java math class and write the java statement for d = 2 * 2 + y * 2.           ,APPLY
+Compute the distance between the two points with the following formula.,APPLY
+Detect error(s) in the following segment of codes and rewrite the codes with correction of the error(s).,COMPREHENSION
+Explain how the increment or decrement operators affect the result of p.,COMPREHENSION
+Explain the concept of narrowing conversion. Indicate in code how the conversion is done.,COMPREHENSION
+Give the three (3) categories of primitive data types and briefly explain what each category is used for.,KNOWLEDGE
+Identify and correct the error(s) in the following statements.,COMPREHENSION
+Provide three (3) situations whereby it will be useful to use reference variables as parameters.,KNOWLEDGE
+Provide the suitable commands to help her to compile and run her Java program.,KNOWLEDGE
+Translate the following algorithm into Java code,COMPREHENSION
+Use a switch statement to rewrite the following if statement.,APPLY
+Simplify the return statement in the max method using the ternary operator,COMPREHENSION
+"Given that a = -10, b = 2, c = 5 and d = 0. Evaluate the following relational and logical expressions:",APPLY
+Draw a flowchart that represents the following codes.,COMPREHENSION
+Name and describe the two ways that the data source window allows data to be viewed.,COMPREHENSION
+Write a statement to set the visibility property of Label1 to the checked property of checkBox1.,COMPREHENSION
+Write an assignment statement that disables a radiobutton named radioButton.,COMPREHENSION
+Explain how a Close method behaves differently for a modelessform (using the show method) compared to a modal form (using the showdialog method).,COMPREHENSION
+Name five types of common dialog boxes.,KNOWLEDGE
+Find the errors and rewrite the corrected codes.,COMPREHENSION
+State  the  differences  between  Items Add  method  and  Items Insert Method in Combo Box.,KNOWLEDGE
+Explain how SWOT and Porter's techniques is applied in the manufacturing industries.,APPLY
+Briefly explain the difference between Form Load event and Form Activated  event.,COMPREHENSION
+Discuss   POST   and   GET  methods   in  relation   to   idempotent   and   non-idempotent requests in the context of bank industry.,COMPREHENSION
+Explain THREE (3) advantages of MVC (Model View Controller) pattern in developing  web  applications.,COMPREHENSION
+Explain 3-Tier architecture in the context of Java Web Architecture at server side.,COMPREHENSION
+Explain how RequestDispatcher mechanism in the context of Servlet and JSP technology  has the ability to  facilitate updating  and maintaining  information on job  advertisements  across  several  dynamic  web  pages.,COMPREHENSION
+Explain Greimas square tool and discuss how it can be applied the aviation industry.,APPLY
+"Compare between URL, re-writing and Hidden Form field methods in respect of similarities and differences in the context of session management in Web environment.",ANALYSIS
+Identify and explain the possible consequences of connecting a database with a web application without using database pooling method.,COMPREHENSION
+Discuss ONE (1) advantage and ONE (1) disadvantage of BASIC and FORM based authentication mechanisms.,COMPREHENSION
+Explain the benefits of Secure Sockets Layer (SSL) in the context of web security.,COMPREHENSION
+Explain  the  concept  of  Java  Bean  with  an  appropriate  example  and  code snippets in the context of Servlet and JSP technology.,COMPREHENSION
+Discuss the effectiveness of using Expression Language (EL) compared to other methods in JSP.,ANALYSIS
+"Implement working codes for presentation, business and data layers.",APPLY
+Propose Java Web architecture diagram for the above case study and explain.,SYNTHESIS
+Discuss the usefulness of HttpSessionActivationListener in web applications.,COMPREHENSION
+Describe  the  differences  between  HTTP  session  listeners  and  servlet  request listeners.,COMPREHENSION
+"Using an appropriate example, prove that listeners are able to manage resources effectively  in  web  applications.",EVALUATE
+"""HTTP POST method is better suited to send confidential information compared to HTTP GET method in web applications."" Justify the statement.",EVALUATE
+Explain the impact of using SendRedirect method in terms of response time.,COMPREHENSION
+Explain  THREE  (3)  benefits   of  JDBC  pooling  m  the  context  of  database connection.,COMPREHENSION
+Discuss TWO (2) benefits of Java Servlets in web applications.,COMPREHENSION
+"Appraise the URL Rewriting, Hidden Form Field and Cookies methods which are supported by the technology.",EVALUATE
+AJAX is a technology that is being widely used in web applications for faster response time. Explain the necessary steps to implementing an AJAX application.,APPLY
+Describe about application and web servers.,KNOWLEDGE
+"MVC (Model View Controller) leads to low coupling"". Justify.",EVALUATE
+"Using appropriate examples, discuss a  situation  in which custom tags would be appropriate to use. ",APPLY
+The impact of using JSTL in software development can significantly reduce its development time. Prove that there is some truth in the statement.,EVALUATE
+Discuss in terms of implementation how to restrict resources such as web components and Enterprise Java Bean (EJB} components for use to only authorized users. ,APPLY
+Discuss the effectiveness of POST and GET methods in respect of flexibility and security.,ANALYSIS
+JSP Technology is meant to replace Servlet Technology. Justify  to  what extent the statement is true.,EVALUATE
+Explain the reasons of using application servers to deploy web applications.,COMPREHENSION
+Explain why Servlet technology is better than the Common Gateway Interface CGI.,COMPREHENSION
+"Using an appropriate example, discuss how MVC can lead to a good design of a particular web application.",COMPREHENSION
+Discuss why web developers or programmers would prefer to use Expression Language (EL) compared to other methods in JSP for displaying dynamic content in web browsers.,ANALYSIS
+Discuss the extent to which Value Chain Analysis can be applied in the logistics sector.,APPLY
+Discuss a security framework for the proposed application.,SYNTHESIS
+Discuss TWO (2) web application frameworks that are suitable to be used in the proposed application.,SYNTHESIS
+Suggest a possible Java Web architecture(s) for the proposed application based on the case study.,SYNTHESIS
+"Popular search engines such as Google, Yahoo and others are used to search information on the web based on user defined keywords. Determine and justify the appropriate HTTP method that should be deployed by those search engines.",EVALUATE
+Analyze the roles of web container or servlet container in a web server in the context of request response model.,ANALYSIS
+Explain the impact of 'connection keep-alive' or persistence connection in the context of request response model on performance of sending response to clients.,COMPREHENSION
+"Using an appropriate example, explain how static data can be shared effectively among several web resources.",COMPREHENSION
+Critically  evaluate the JDBC  and pooling  method  in the context of database connections.,EVALUATE
+"Using an appropriate example, explain how session listeners can be used in a web application.",APPLY
+HTTP is a stateless protocol. Justify.,EVALUATE
+Explain the relationship between HTTP GET method and URL Rewriting in the context of session management.,COMPREHENSION
+Explain how you would  implement  delete schedule functionality in effective manner.  ,COMPREHENSION
+"Using the data shown in Table 1, generate some frequent item sets.",APPLY
+"Interpret the relationship found between these item sets in terms of Support, Lift and Confidence.",COMPREHENSION
+Comment on the validity of your answer.,EVALUATE
+Explain with appropriate examples how taxonomies would help analysis of items in market basket analysis.,APPLY
+Briefly discuss why the emergence of the data warehouse phenomenon is causing such interest in the business world.,COMPREHENSION
+Contrast TWO (2) differences between a data mart and a data warehouse.,ANALYSIS
+Recommend appropriate data warehouse architecture for the company and illustrate it with a diagram.,SYNTHESIS
+Provide some justifications for the data warehouse architecture that you have chosen in Q2 (a).,EVALUATE
+Discuss some possible challenges that the bank may face in deploying  data mining.,COMPREHENSION
+Explain how GST approach can be deployed in the context of Accounting Information System.,APPLY
+"Explain, using appropriate examples, FIVE (5)  possible sources of data pollution in implementing data warehouse in the bank.",COMPREHENSION
+Identify some of the most important possible dimensions that should be included in the data modelling design.,KNOWLEDGE
+Discuss  the role  of  restriction  and  aggregation  in reducing  the  quantity  of data and obtaining useful information from a data warehouse.,COMPREHENSION
+Summarize the data purification process.,COMPREHENSION
+Describe ANY FIVE (5) possible scenarios of the project failure.,KNOWLEDGE
+Rearrange it to design the correct schema that is suitable for the system implementation.,SYNTHESIS
+"Discuss, using appropriate examples, how OLAP operations would benefit in the credit card company.",COMPREHENSION
+Critically  appraise  of  making  data  warehouse  Web  Enable  in  the company.,EVALUATE
+"Discuss  how  data  mining  operations  which  are  classification,  association, clustering and anomaly detection can be deployed in a variety of industries.",APPLY
+Discuss major tasks in data preprocessing.,COMPREHENSION
+Explain the relationship between data warehouse and data mining.,COMPREHENSION
+Differentiate between classification  and prediction.  Justify your answer using an example for each.,EVALUATE
+Explain k-means and k-medoids methods in the respect of robustness in the context of clustering analysis.,COMPREHENSION
+"Using appropriate examples, differentiate between agglomerative  and divisive in the context of agglomerative hierarchical clustering.",ANALYSIS
+Explain TWO  (2)  strengths and  TWO  (2) weaknesses of clustering based method in outlier detection.,ANALYSIS
+Suggest TWO (2) ways of managing knowledge that organization can perform in order to gain sustainable advantage in today's rapid changing market environment.,SYNTHESIS
+Illustrate by using a real life example on explicit knowledge.,COMPREHENSION
+"In general, there are four broad categories of innovation which include product innovation. Illustrate your understanding by using TWO (2) real life examples for product innovation that follow the radical fashion.",COMPREHENSION
+Explain how Referral Networks approach can be used as a tool to increase number of customers.,APPLY
+Identify any TWO (2) specific problems of the traditional hierarchical structures in response to the need to better manage knowledge.,COMPREHENSION
+Propose any TWO (2) alternative solutions from organization structures perspective to facilitate the KM practice. Justify your answers with short elaborations.,EVALUATE
+Identify  any THREE  (3) practical  examples  for partial  views  of innovation and discuss the consequences for each of the example.,COMPREHENSION
+Draw and explain Nonaka's model of knowledge creation and transformation in detail.,COMPREHENSION
+"Illustrate  by  using  a  real  life  example  on  the  possible  relationship between data, information and knowledge.",COMPREHENSION
+Use philanthropy approach to manage corporate social responsibility effectively.,APPLY
+Discuss the main purpose of quiet on-site observation technique.,COMPREHENSION
+Discuss on the importance of KM with specific reference to its impact on employee's learning and process efficiency.,ANALYSIS
+State the differences between invention and innovation.,COMPREHENSION
+Explain how e-mail agents work.,COMPREHENSION
+Explain the CRM implementation in Chola MS.,COMPREHENSION
+Propose  the  examples  of  how  text  mining  could  be  used  in  other businesses.,SYNTHESIS
+Identify the HP's challenges in text mining.,KNOWLEDGE
+Provide FIVE (5) examples on how HP can use text mining in other areas.,APPLY
+Justify why company XYZ needs to use expert systems,EVALUATE
+Explain the components of CRM that Citibank used.,ANALYSIS
+Provide TWO  (2) possible reasons why AirAsia  decide to offer this new online service.,COMPREHENSION
+Identify  THREE  (3) possible  threats  you  should  anticipate  for this Internet-based business.,COMPREHENSION
+Suggest THREE (3) methods Game2 can take to prevent damage to its Web sites and continuing operations.  Justify your answer.,EVALUATE
+Explain  the  concept  of  Customer  Relationship  Management  (CRM).,COMPREHENSION
+Apply Porter's five competitive forces analysis to examine the summer job industry for your uncle.,APPLY
+Discover FOUR (4) characteristic of IT infrastructure to be considered.,SYNTHESIS
+Concisely define what SWOT analysis is and state why it is frequently producing conflicting views.,COMPREHENSION
+Formulate the profit for the company. ,SYNTHESIS
+Information systems value is determined by the strong relationships among THREE (3) major components. Name them.,KNOWLEDGE
+Cloud computing evolved from earlier technologies. State them.,KNOWLEDGE
+Briefly  explain  any  TWO  (2) observations  of information  technology trend using Moore's Law.,COMPREHENSION
+Relate cycle-time reduction to improved performance. Justify your answer.,EVALUATE
+Define privacy.,KNOWLEDGE
+"In your own words, describe Supply Chain Management (SCM).",COMPREHENSION
+"In  your  opinion,  discuss  how  modern   supply  chain  management systems facilitate a pull-based  model.",COMPREHENSION
+Define the term Radio Frequency Identification (RFID).,KNOWLEDGE
+Explain how RFID provides value to businesses.,COMPREHENSION
+"Use Porter's five competitive forces to analyze FiredUp, Inc.",APPLY
+"Base on the case study given, summarize THREE (3) ISM security problems.",COMPREHENSION
+Classify information systems based on the support IS can provide.,COMPREHENSION
+Draw the diagrams for a centralized database and a distributed database.,COMPREHENSION
+Explain how the future of social media can be explained by Web 3.0.  ,COMPREHENSION
+Define knowledge and provide an example of knowledge produced by a vehicle management system.,KNOWLEDGE
+"Given a frequency filter specification as H(u;v), derive a procedure to generate the convolution result of its corresponding spatial filter with an image f(x,y). ",APPLY
+Describe  briefly  how  an  image  can  be  represented  by  chain  coding  and moments.,COMPREHENSION
+Explain what is meant by occlusion and discuss the ability of chain coding to cope with occlusion.,COMPREHENSION
+Specify TWO (2) limitations of k-means clustering.,KNOWLEDGE
+Calculate the fitness function for all chromosomes in the population.,APPLY
+"Assuming the elitism selection method where the best chromosomes are selected for pairing, apply the crossover and mutation for the selected pair of chromosomes using the encoding scheme proposed in (b)(i).",APPLY
+Suggest a procedure which uses k-means as a subroutine with a better chance than k-means in obtaining good clustering.,SYNTHESIS
+Solve the following problem using genetic algorithm.,APPLY
+"MLPs are frequently used to approximate functions. However, the quality of the approximation depends on the parameters of the MLP used. Discuss how this quality is affected by the number of hidden layers used in the MLP.",COMPREHENSION
+Briefly explain how Ant Colony Optimization (ACO) algorithm can be used to solve Travelling Salesperson Problem (TSP).,APPLY
+Explain how mutation technique can be implemented in Genetic Algorithm (GA).,APPLY
+Describe how hypotheses are combined in boosting.,COMPREHENSION
+Describe dynamic load balancing using centralised work pool approach.,COMPREHENSION
+Briefly explain why a parallel solution with less number of synchronisation phases is more preferred than other solution with a lot of synchronisation phases.,COMPREHENSION
+Describe the sender-initiated task transfer method that used in dynamic load balancing.,COMPREHENSION
+"There are two approaches to solve a problem, namely X and Y. Approach X uses a lot of synchronizations compared to approach Y. Briefly explain why the approach Y should be chosen to solve the problem.",ANALYSIS
+Identify PayPal's business model.,KNOWLEDGE
+Scaling methods can improve the performance of the web site. Propose to Jane which scaling method suit her current business needs. Justify your answer.,EVALUATE
+Examine how e-commerce facilitates Value Chain and Supply Chain.,ANALYSIS
+Explain how auction is related to dynamic pricing.,COMPREHENSION
+Compare and contrast Address Verification  System (AVS) and Card verification number (CVN).,ANALYSIS
+Provide THREE (3) justification on how would the university community be encouraged to place orders and become loyal customers.,EVALUATE
+Personalization is becoming an important element in Electronic Commerce. Explain TWO (2) techniques that can be used to learn about consumer behavior and how it can be used to facilitate customer service.,COMPREHENSION
+Provide TWO (2) suggestions on how a Web presence help Columbiana's government.,SYNTHESIS
+"Critically explain how our statuses, educational qualification and occupation affect our social stratification, social mobility and life chances.",ANALYSIS
+"Based on your opinion, discuss critically, how far you agree that race relations have become unhealthy in our country.",EVALUATE
+"Discuss critically, by using your understanding of nature and nurture.",EVALUATE
+Explain THREE characteristics that distinguish authoritarianism from totalitarianism.,ANALYSIS
+Analyze and discuss the conceptual influence of the philosophy on education today.,ANALYSIS
+Briefly  discuss  how  TQM  could  be  applied  in  the  management  of  the newspapers' editorials.,APPLY
+"Based on your observation of the local newspaper industry, discuss and state your stance on whether gender affects professional news selection.",EVALUATE
+Discuss how far you agree with this statement with emphasis on circulation management of a newspaper company.,EVALUATE
+Argue critically with relevant examples.,EVALUATE
+Define CRM and discuss how the CRM can be implemented in the business environment.,APPLY
+Critically discuss the quote above and explain FIVE(5) ways the interest groups can be more effective with relevant examples.,ANALYSIS
+Critically analyze and discuss the problems with secondary data. Provide relevant examples to support your answer.,ANALYSIS
+Describe the term 'urbanization' and discuss how urbanization influences the development of marketing and advertising strategies.,COMPREHENSION
+Critically discuss how demographic characteristics would affect a product development in a foreign market.,ANALYSIS
+Analyze and discuss the challenges and opportunities that social media creates.,ANALYSIS
+Critically analyze the image above and discuss the strategic decisions associated with the appeals of the advertisement.,ANALYSIS
+Suggest THREE (3) ethical considerations that ANA advertisers should take into account in designing commercials.,SYNTHESIS
+Create a poster that promote jeans to local senior citizen which appeal directly to a multiracial citizen in Malaysia.,SYNTHESIS
+Select a local 'HOMEGROWN' brand and discuss its international marketing mix.,COMPREHENSION
+Critically discuss FOUR (4) main dimensions that are used to classify countries based on Hofstede's Cultural Dimensions Theory.,ANALYSIS
+Compare and contrast between low context cultures and high context cultures. ,ANALYSIS
+Critically discuss the THREE (3) options in handling the international media planning or buying.,ANALYSIS
+Design an ideal newspaper organizational chart. Then describe the functions of the respective departments and how they relate to each other horizontally and vertically.,SYNTHESIS
+Examine the two roles and show how newspaper managers can successfully draw a balance between their economic role and social role.   ,ANALYSIS
+Show how NLP techniques can be deployed in business.,APPLY
+Suggest a house-style and editorial policies for your newly introduced newspaper targeted at young readers aged between 15 to 25 years.,SYNTHESIS
+Examine how conventional newspaper can continue to maintain its circulation with the easy access to alternative information on the web.,ANALYSIS
+"As an editor-in-chief, suggest how you can motivate your experienced journalists to remain with your paper.",SYNTHESIS
+Discuss the factors that you think may have affected the quality of newspapers in Malaysia and identify the key elements for a successful newspaper .,ANALYSIS
+List any five departments and discuss the relations between these departments and the importance of depending on each other.,ANALYSIS
+"Evaluate the performance of Malaysian newspapers and comment on what you think they should do to win back readers, particularly those who show preference for online news.",EVALUATE
+Prepare a research  proposal on a study that you have to conduct on the purchasing behaviour of teenagers in the Klang Valley.,SYNTHESIS
+Evaluate the need for ethics in research.,EVALUATE
+Explain the case study research method and distinguish between single and multiple case study design.,ANALYSIS
+Argue the case for conducting experimental research involving humans and propose guidelines to ensure that the dignity and welfare of the subjects are maintained.,EVALUATE
+Differentiate between qualitative research and quantitative research in terms of their goal and design.,ANALYSIS
+Develop a questionnaire based on at least FOUR open-ended and FOUR closed-ended questions for the interviews.,SYNTHESIS
+Analyze the purpose of having a Purchasing Department in an organization.,ANALYSIS
+Draw a diagram of the Intelligent System structure with detailed explanation.,COMPREHENSION
+"With an appropriate example, discuss the effectiveness of using message queue compared to pipes in communication between processes.",ANALYSIS
+Apply how semaphores and shared memory methods can be deployed to execute a particular task.,APPLY
+Compare and contrast between signal and pipe methods in the context of inter process communication.,ANALYSIS
+Examine the connection and connectionless protocols using appropriate examples.,ANALYSIS
+"With the aid of pseudocode or source codes, assess the usage of fork, exec and wait functions in working together in inter process communication.",EVALUATE
+Determine if the two principal components are adequate to explain the variation in the sample that was used to calculate I.,APPLY
+State three methods that could be used to determine the adequate number of factors in the solution.,KNOWLEDGE
+Determine the percentage of variation in the correlation matrix that is explained by the 4 factors.,APPLY
+Estimate the communalities and specific variances for the first four variables.,APPLY
+Indicate the variables that are important in each of the canonical variates.,KNOWLEDGE
+Write the first pair of standardised canonical variates.,KNOWLEDGE
+Calculate the length of the projection of vector x on vector y. ,APPLY
+Classify a person who scored 12 and 10 for acceptability  and confidence assuming equal cost of misclassification and current percentage of supporters being 40.,COMPREHENSION
+Construct a confusion matrix for the data and estimate the Apparent Error Rate. ,COMPREHENSION
+Solve the following optimization problem by using the golden section search method and terminate the computation when the length of the interval.  ,APPLY
+Use dynamic programming to make these allocations to maximize the total grade points to be obtained from the four courses.,APPLY
+Apply the Karush-Kuhn-Tucker conditions for this problem to derive an optimal solution.,APPLY
+Use Lagrange multiplier to solve the following nonlinear programming problem.,APPLY
+Use dynamic programming to help the fortune seeker to identify the route which minimizes the total cost of the policy.,APPLY
+Use the Chapman-Kolmogorov Equations procedure to find the n-step transition matrix pUi for n = 2 and 5.,APPLY
+Formulate the evolution of the weather as a Markov chain by defining its states and giving its (one-step) transition matrix.,SYNTHESIS
+Determine how to minimize the total cost of operating and purchasing a telephone for the next six years.,APPLY
+Define transgenic crops.,KNOWLEDGE
+List four traits commonly used for the development of transgenic crops.,KNOWLEDGE
+“Transgenic technology is the best method used for crop improvement and that it should be the only method adopted in future”. Comment on the above statement and justify your explanation.,EVALUATE
+Discuss in detail the criteria used to assess the success or failure of a newly released transgenic crop with improved tolerance to stress.,ANALYSIS
+State TWO (2) advantages of continuous bioreactors over batch bioreactors.,KNOWLEDGE
+"Using the Luedeking-Piret equation for growth associated product formation, calculate the pullulan concentration in 30h of fermentation.",APPLY
+Name a major culture collection.,KNOWLEDGE
+Butanol is found to be an efficient carbon source for the cultivation of this microorganism. Suggest how this carbon source can be sterilised and used in this fermentation process.,SYNTHESIS
+"After strain modification process, the UTAR002 is found to be unable to excrete the desired enzyme into the medium.  Suggest a proper purification protocol for the recovery of this product.",SYNTHESIS
+"As a fermentation technologist, you are required to maximise the production of citric acid through chemostat process. The chemostat process is going to be operated at dilution rate of 0.25 h-1 with 30 g/L of sucrose concentration in the feeding tank. Evaluate the possibilities in employing chemostat for citric acid production.",EVALUATE
+Distinguish between chemically defined media and natural media.,ANALYSIS
+"Optimization of medium and culture conditions of a fermentation process can be conducted by using multifactor experimental design or response surface optimization. With aid of a flow chart, compare and contrast these two methods.",ANALYSIS
+"From your observation, you noticed that agitation and aeration are important in cultivating the Lactobacillus acidophilus aerobically. Suggest the most suitable agitator that could be used for this purpose. Describe the proposed impeller type in detail.",SYNTHESIS
+Discuss and show the impact of CRM strategies in the telecommunication sector.,APPLY
+Suggest the most suitable growth model that could be applied to describe the growth of above-mentioned Lactobacillus acidophilus strain. Briefly explain the suggested growth model.,SYNTHESIS
+Distinguish Paradox of the Commons from Tragedy of the Commons.,ANALYSIS
+Evaluate the three specific effects caused by the applications of information technology on the nature of competition.,EVALUATE
+"Advise the five steps, as recommended by Porter and Millar, that can be applied by business managers in taking advantage of information technology.",SYNTHESIS
+Winer (2001) proposes a 7-component Customer Relationship Management (CRM) Model as a framework to implement a successful CRM program. Evaluate each of the seven components of the CRM Model.,EVALUATE
+"Davenport (2000) discusses four emerging trends to be considered in designing future enterprise systems. Analyze each emerging trend, its relevance and importance to the designing of future enterprise systems.",ANALYSIS
+Alavi and Leidner (2001) examine how information technology (IT) can be a key enabler in supporting four organizational knowledge management (KM) processes. Critically assess the role of IT in supporting the four KM processes.,EVALUATE
+PERCEPTION STUDIES based on SURVEY METHOD are useful and common in both academic and market research. Critically evaluate the strategies used in data collection that can increase the response rate when conducting a survey.,EVALUATE
+Critically review how a shift in the mental model with a different set of assumptions could change Yahoo.,EVALUATE
+"With reference  to the case, evaluate the similarities  and differences  between  open mindedness and mental models.",EVALUATE
+Leaders  often  face  a  dilemma  because  of  a  perceived  conflict  between  the realm of business and the realm of ethics. Compare the characteristics  of leaders who follow a strict rational  self-interest  approach  with  those  who take an ethical approach.,ANALYSIS
+Evaluate the appropriateness of drugs advertising by the pharmaceutical firms.,EVALUATE
+Distinguish clearly between power and authority.,ANALYSIS
+Apply SWOT analysis in education environment and discuss its impact in the revenue analysis.,APPLY
+"Evaluate the types of power Benjamin Fang is exercising in Sun Plantations, and explain how this is being eroded by the changes taking place in the environment.",EVALUATE
+Discuss the extent to which the existence of a conflict between a company's objectives is acceptable.,EVALUATE
+"Discuss the extent to which it is feasible for a company to 'operationalise' its social responsibility Spirations, that is, whether it is possible to bring these considerations into strategic decision-making in a programmed or systematic way.",EVALUATE
+"Identify and recommend any appropriate amendments to the proposal presented in order to rectify the errors made in estimating the company's current cost of capital and current value. For each of the revisions, explain the reasons why it should be amended.",EVALUATE
+"Recommend with justification, a value or range of values to the Board of Directors for the acquisition of ESL Berhad.",EVALUATE
+"Compare how the Net Present Value (NPV), IRR method and modified Internal Rate of Return (MIRR) method is different.",ANALYSIS
+Analyze the product-market options that are available to Associated Meats Sdn Bhd.,ANALYSIS
+"Critically review the strengths, weaknesses,  opportunities and threats of Associated Meats Sdn Bhd in light of the forecast trends and developments.",EVALUATE
+"Critically appraise the five competitive forces encased within Porter's ""FIVE FORCES"" model within the context of a profit-oriented organization and discuss the threat posed to the firm by each of these forces.",EVALUATE
+"Evaluate the nature and effect of significant ""entry barriers"" on the formulation of a strategic plan for a business which is already established in the industry.",EVALUATE
+Synthesize any FIVE (5) factors that  should be considered  when  devising a safe system to undertake a task in an organization.,SYNTHESIS
+Demonstrate email and social media approaches to create effective marketing plan.,APPLY
+Synthesize the need for ventilation as an engineering control.,SYNTHESIS
+Assess the reason for hazard communication and the mode of communication practice for chemical safety at worksite.,EVALUATE
+List FIVE (5) functions of Department of Safety and Health as outline in OSHA 1994.,KNOWLEDGE
+Define the term project in the context of project management.,KNOWLEDGE
+Define standard operating procedures as highlighted.,KNOWLEDGE
+Compare FOUR (4) point of views of entrepreneurs with FOUR (4) for managers the way they look at the things.,ANALYSIS
+Being a technopreneur means dealing with innovation. Define what innovation is and also propose FOUR (4) types of innovations you can have in your organization.,SYNTHESIS
+List any SEVEN (7) suggestions for good presentation of your business plan as it is very crucial to convince potential consumers and financers.,KNOWLEDGE
+PEST and SWOT are popular strategy tools. Discuss how the TWO(2) tools can be applied in manufacturing business environment.,APPLY
+List the advantages and disadvantages of Public Offering.,KNOWLEDGE
+Show your calculations for all THREE (3) options and then discuss which one of the options you prefer.,ANALYSIS
+Currently the product life cycle for Apple iPod is in the 'growth stage'. Provide evidence to support your answer.,EVALUATE
+Define brand audit.,KNOWLEDGE

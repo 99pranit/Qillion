@@ -1,4 +1,4 @@
-cot_gpt,cot_llama
+cot_no_context_gpt,cot_no_context_llama
 synthesis,synthesis
 analysis,analysis
 synthesis,synthesis

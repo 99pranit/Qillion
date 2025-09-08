@@ -1,4 +1,4 @@
-zero_shot_gpt,zero_shot_llama,instruct_prompt_gpt,instruct_prompt_llama
+zero_shot_no_context_gpt,zero_shot_no_context_llama,instruct_prompt_no_context_gpt,instruct_prompt_no_context_llama
 synthesis,synthesis,synthesis,synthesis
 analysis,analysis,analysis,analysis
 synthesis,synthesis,synthesis,synthesis

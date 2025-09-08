@@ -1,4 +1,4 @@
-zero_shot_gpt,zero_shot_llama,few_shot_gpt,few_shot_llama
+zero_shot_context_gpt,zero_shot_context_llama,few_shot_context_gpt,few_shot_context_llama
 synthesis,synthesis,synthesis,synthesis
 analysis,analysis,analysis,analysis
 synthesis,synthesis,synthesis,synthesis

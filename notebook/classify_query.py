@@ -4,17 +4,20 @@ from tqdm import tqdm
 from collections import Counter
 
 class classify_query:
-    def __init__(self, api_key=None, persona='multi'):
+    def __init__(self, api_provider='groq', persona='multi', query=None, model_name=None, correction_model=None):
         # Use provided key or fall back to environment variable
-        self.api_key = api_key or os.environ.get("GROQ_API_KEY")
+        self.api_key = os.environ.get(api_provider.upper() + "_API_KEY")
         self.client = None
         self.valid_labels = [
             'knowledge', 'comprehension', 'application', 
             'analysis', 'synthesis', 'evaluation'
         ]
-        self.persona = persona
+        self.persona = persona.lower()
+        self.query = query
+        self.model_name=model_name
+        self.correction_model=correction_model
         
-        # Static prompt blocks
+        # Pre-defined prompt blocks
         self.definitions = """
                     1. Knowledge: Recalling facts, terms, basic concepts, or answers without necessarily understanding them
                     2. Comprehension: Demonstrating understanding of facts by interpreting, translating, summarizing, or explaining
@@ -59,12 +62,11 @@ class classify_query:
         )
         print("API setup successful")
 
-    def _generate_prompt_(self, persona, query):
+    def _generate_prompt_(self):
         """Helper to generate specific prompts based on the persona."""
         base_labels = f"Labels: [{', '.join(self.valid_labels)}]"
-        persona = persona.lower()
 
-        if persona == 'professor':
+        if self.persona == 'professor':
             return f"""You are a university professor labeling question based on Bloom's Taxonomy Level.
                     {base_labels}
 
@@ -76,15 +78,15 @@ class classify_query:
 
                     Now classify the following question:
                 
-                query : {query}"""
+                query : {self.query}"""
 
-        elif persona == 'student':
+        elif self.persona == 'student':
             return f"""You are a student labeling question based on Bloom's Taxonomy Level.
                     {base_labels}
                 
-                query : {query}"""
+                query : {self.query}"""
 
-        elif persona in ['psychologist', 'psychiatrist']:
+        elif self.persona in ['psychologist', 'psychiatrist']:
             return f"""You are a psychiatrist labeling question based on Bloom's Taxonomy Level.
                     {base_labels}
 
@@ -96,9 +98,9 @@ class classify_query:
 
                     Now classify the question into one Bloom’s Taxonomy level:
                 
-                query : {query}"""
+                query : {self.query}"""
 
-        elif persona == 'engineer':
+        elif self.persona == 'engineer':
             return f"""You are a engineer labeling question based on Bloom's Taxonomy Level.
                     {base_labels}
 
@@ -110,9 +112,9 @@ class classify_query:
 
                     Now classify the question into one Bloom’s Taxonomy level:
                 
-                query : {query}"""
+                query : {self.query}"""
 
-        elif persona == 'examiner':
+        elif self.persona == 'examiner':
             return f"""You are a examiner labeling question.
                     {base_labels}
 
@@ -121,12 +123,12 @@ class classify_query:
 
                     Now classify the following question:
                 
-                query : {query}"""
+                query : {self.query}"""
         
         else:
-            return f"""Classify the following question based on Bloom's Taxonomy Level: {base_labels}. Query: {query}"""
+            return f"""Classify the following question based on Bloom's Taxonomy Level: {base_labels}. Query: {self.query}"""
         
-    def get_ensemble_label(self, query, model_name="openai/gpt-oss-120b"):
+    def get_ensemble_label(self):
         """
         Classifies a query using multiple personas and returns the majority vote label.
         Based on the MPET (Multi-Persona Ensemble Technique) from the notebook.
@@ -135,8 +137,9 @@ class classify_query:
         
         votes = []
         # Gather votes from all personas
-        for persona in personas:
-            label = self.get_label(query, model_name=model_name, persona=persona)
+        for role in personas:
+            self.persona = role
+            label = self.get_label()
             if label not in ["unknown", "error"]:
                 votes.append(label)
         
@@ -152,69 +155,37 @@ class classify_query:
             "confidence": count / len(votes)
         }
 
-    def get_label(self, query, model_name="openai/gpt-oss-120b", persona="student"):
+    def get_label(self):
         """Classifies a single query using a specific persona."""
-        if not self.client:
-            self.setup_api()
-
-        prompt_content = self._generate_prompt_(persona, query)
+        prompt_content = self._generate_prompt_()
 
         try:
             chat_completion = self.client.chat.completions.create(
                 messages=[{"role": "user", "content": prompt_content}],
-                model=model_name,
+                model=self.model_name,
             )
             reply = chat_completion.choices[0].message.content.lower().strip()
 
             # Self-correction loop
-            retries = 0
-            max_retries = 3
-            correction_model = "openai/gpt-oss-20b"
-
-            while reply not in self.valid_labels and retries < max_retries:
+            while reply not in self.valid_labels:
                 extraction_prompt = f"""Extract answer from previous reponse only in one word without punctuation from: 
                         [{' , '.join(self.valid_labels)}]
                     previous response : {reply}"""
                 
                 chat_completion = self.client.chat.completions.create(
                     messages=[{"role": "user", "content": extraction_prompt}],
-                    model=correction_model,
+                    model=self.correction_model,
                 )
                 
                 reply = chat_completion.choices[0].message.content.lower().strip()
                 import string
                 reply = reply.translate(str.maketrans('', '', string.punctuation))
-                retries += 1
 
             return reply if reply in self.valid_labels else "unknown"
 
         except Exception as e:
             print(f"Error processing query: {e}")
             return "error"
-
-if __name__ == "__main__":
-    # 1. Setup and Initialization
-    # Ensure you have your API key set in your environment variables: export GROQ_API_KEY="your_key_here"
-    api_key = os.environ.get("GROQ_API_KEY")
-    
-    if not api_key:
-        print("Please set the GROQ_API_KEY environment variable.")
-    else:
-        classifier = classify_query(api_key=api_key)
-
-        sample_queries = input('Enter query to classify')
-        persona = input('Enter persona of classification')
-
-        if persona == 'multi':
-            print("--- Single Persona Classification (Student) ---")
-            results = classifier.get_label(sample_queries, persona="student")
-            for q, r in zip(sample_queries, results):
-                print(f"Q: {q}\nLabel: {r}\n")
-        else:
-            print("\n--- MPET Ensemble Classification (Majority Vote) ---")
-            test_query = "Propose a plan to reduce plastic pollution in cities."
-            ensemble_result = classifier.get_ensemble_label(test_query)
         
-            print(f"Q: {test_query}")
-            print(f"Consensus Label: {ensemble_result['final_label'].upper()}")
-            print(f"Confidence: {ensemble_result['confidence']:.2%}")
+if __name__ == "__main__":
+    classify_query.get_label()

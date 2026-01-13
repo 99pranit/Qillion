@@ -4,7 +4,7 @@ from tqdm import tqdm
 from collections import Counter
 
 class classify_query:
-    def __init__(self, api_key=None):
+    def __init__(self, api_key=None, persona='multi'):
         # Use provided key or fall back to environment variable
         self.api_key = api_key or os.environ.get("GROQ_API_KEY")
         self.client = None
@@ -12,8 +12,9 @@ class classify_query:
             'knowledge', 'comprehension', 'application', 
             'analysis', 'synthesis', 'evaluation'
         ]
+        self.persona = persona
         
-        # Static content blocks derived from the notebook
+        # Static prompt blocks
         self.definitions = """
                     1. Knowledge: Recalling facts, terms, basic concepts, or answers without necessarily understanding them
                     2. Comprehension: Demonstrating understanding of facts by interpreting, translating, summarizing, or explaining
@@ -58,7 +59,7 @@ class classify_query:
         )
         print("API setup successful")
 
-    def _generate_prompt(self, persona, query):
+    def _generate_prompt_(self, persona, query):
         """Helper to generate specific prompts based on the persona."""
         base_labels = f"Labels: [{', '.join(self.valid_labels)}]"
         persona = persona.lower()
@@ -124,13 +125,39 @@ class classify_query:
         
         else:
             return f"""Classify the following question based on Bloom's Taxonomy Level: {base_labels}. Query: {query}"""
+        
+    def get_ensemble_label(self, query, model_name="openai/gpt-oss-120b"):
+        """
+        Classifies a query using multiple personas and returns the majority vote label.
+        Based on the MPET (Multi-Persona Ensemble Technique) from the notebook.
+        """
+        personas = ['professor', 'student', 'psychologist', 'engineer', 'examiner']
+        
+        votes = []
+        # Gather votes from all personas
+        for persona in personas:
+            label = self.get_label(query, model_name=model_name, persona=persona)
+            if label not in ["unknown", "error"]:
+                votes.append(label)
+        
+        if not votes:
+            return "unknown"
+
+        # Apply Majority Vote (MPET Logic)
+        vote_counts = Counter(votes)
+        top_label, count = vote_counts.most_common(1)[0]
+        
+        return {
+            "final_label": top_label,
+            "confidence": count / len(votes)
+        }
 
     def get_label(self, query, model_name="openai/gpt-oss-120b", persona="student"):
         """Classifies a single query using a specific persona."""
         if not self.client:
             self.setup_api()
 
-        prompt_content = self._generate_prompt(persona, query)
+        prompt_content = self._generate_prompt_(persona, query)
 
         try:
             chat_completion = self.client.chat.completions.create(
@@ -165,36 +192,6 @@ class classify_query:
             print(f"Error processing query: {e}")
             return "error"
 
-    def get_ensemble_label(self, query, model_name="openai/gpt-oss-120b", personas=None):
-        """
-        Classifies a query using multiple personas and returns the majority vote label.
-        Based on the MPET (Multi-Persona Ensemble Technique) from the notebook.
-        """
-        if personas is None:
-            # Default set based on 'human_expert_perspective.ipynb'
-            personas = ['professor', 'student', 'psychologist', 'engineer', 'examiner']
-        
-        votes = []
-        # Gather votes from all personas
-        for persona in personas:
-            label = self.get_label(query, model_name=model_name, persona=persona)
-            if label not in ["unknown", "error"]:
-                votes.append(label)
-        
-        if not votes:
-            return "unknown"
-
-        # Apply Majority Vote (MPET Logic)
-        # Source: MPET.ipynb Cell 2: def majority_vote(row): counts = Counter(row)...
-        vote_counts = Counter(votes)
-        top_label, count = vote_counts.most_common(1)[0]
-        
-        return {
-            "final_label": top_label,
-            "confidence": count / len(votes),
-            "votes": dict(vote_counts)
-        }
-
 if __name__ == "__main__":
     # 1. Setup and Initialization
     # Ensure you have your API key set in your environment variables: export GROQ_API_KEY="your_key_here"
@@ -205,26 +202,19 @@ if __name__ == "__main__":
     else:
         classifier = classify_query(api_key=api_key)
 
-        # 2. Define Sample Queries
-        sample_queries = [
-            "Design an experiment to compare two models.",  # Expected: Analysis/Synthesis
-            "What is the capital of France?",               # Expected: Knowledge
-            "Critique the author’s argument in the article." # Expected: Evaluation
-        ]
+        sample_queries = input('Enter query to classify')
+        persona = input('Enter persona of classification')
 
-        print("--- Single Persona Classification (Student) ---")
-        # Test basic batch classification with a single persona
-        results = classifier.classify_batch(sample_queries, persona="student")
-        for q, r in zip(sample_queries, results):
-            print(f"Q: {q}\nLabel: {r}\n")
-
-        print("\n--- MPET Ensemble Classification (Majority Vote) ---")
-        # Test the ensemble method (MPET) derived from your notebook
-        # This queries multiple personas and votes on the best label
-        test_query = "Propose a plan to reduce plastic pollution in cities."
-        ensemble_result = classifier.get_ensemble_label(test_query)
+        if persona == 'multi':
+            print("--- Single Persona Classification (Student) ---")
+            results = classifier.get_label(sample_queries, persona="student")
+            for q, r in zip(sample_queries, results):
+                print(f"Q: {q}\nLabel: {r}\n")
+        else:
+            print("\n--- MPET Ensemble Classification (Majority Vote) ---")
+            test_query = "Propose a plan to reduce plastic pollution in cities."
+            ensemble_result = classifier.get_ensemble_label(test_query)
         
-        print(f"Q: {test_query}")
-        print(f"Consensus Label: {ensemble_result['final_label'].upper()}")
-        print(f"Confidence: {ensemble_result['confidence']:.2%}")
-        print(f"Votes Breakdown: {ensemble_result['votes']}")
+            print(f"Q: {test_query}")
+            print(f"Consensus Label: {ensemble_result['final_label'].upper()}")
+            print(f"Confidence: {ensemble_result['confidence']:.2%}")

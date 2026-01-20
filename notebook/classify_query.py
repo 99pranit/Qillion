@@ -1,13 +1,11 @@
 import os
 from openai import OpenAI
-from tqdm import tqdm
 from collections import Counter
 
-class classify_query:
+class classifyQuery:
     def __init__(self, api_provider='groq', persona='multi', query=None, model_name=None, correction_model=None):
         # Use provided key or fall back to environment variable
         self.api_key = os.environ.get(api_provider.upper() + "_API_KEY")
-        self.client = None
         self.valid_labels = [
             'knowledge', 'comprehension', 'application', 
             'analysis', 'synthesis', 'evaluation'
@@ -157,35 +155,43 @@ class classify_query:
 
     def get_label(self):
         """Classifies a single query using a specific persona."""
-        prompt_content = self._generate_prompt_()
+        self.setup_api()
 
-        try:
-            chat_completion = self.client.chat.completions.create(
-                messages=[{"role": "user", "content": prompt_content}],
-                model=self.model_name,
-            )
-            reply = chat_completion.choices[0].message.content.lower().strip()
+        if self.client is not None:
+            if self.persona == 'multi':
+                self.get_ensemble_label()
+            
+            else:
+                prompt_content = self._generate_prompt_()
 
-            # Self-correction loop
-            while reply not in self.valid_labels:
-                extraction_prompt = f"""Extract answer from previous reponse only in one word without punctuation from: 
-                        [{' , '.join(self.valid_labels)}]
-                    previous response : {reply}"""
-                
-                chat_completion = self.client.chat.completions.create(
-                    messages=[{"role": "user", "content": extraction_prompt}],
-                    model=self.correction_model,
-                )
-                
-                reply = chat_completion.choices[0].message.content.lower().strip()
-                import string
-                reply = reply.translate(str.maketrans('', '', string.punctuation))
+                try:
+                    chat_completion = self.client.chat.completions.create(
+                        messages=[{"role": "user", "content": prompt_content}],
+                        model=self.model_name,
+                    )
+                    reply = chat_completion.choices[0].message.content.lower().strip()
 
-            return reply if reply in self.valid_labels else "unknown"
+                    # Self-correction loop
+                    while reply not in self.valid_labels:
+                        extraction_prompt = f"""Extract answer from previous reponse only in one word without punctuation from: 
+                                [{' , '.join(self.valid_labels)}]
+                            previous response : {reply}"""
+                        
+                        chat_completion = self.client.chat.completions.create(
+                            messages=[{"role": "user", "content": extraction_prompt}],
+                            model=self.correction_model,
+                        )
+                        
+                        reply = chat_completion.choices[0].message.content.lower().strip()
+                        import string
+                        reply = reply.translate(str.maketrans('', '', string.punctuation))
 
-        except Exception as e:
-            print(f"Error processing query: {e}")
-            return "error"
+                    return reply if reply in self.valid_labels else "unknown"
+
+                except Exception as e:
+                    print(f"Error processing query: {e}")
+                    return "error"
         
 if __name__ == "__main__":
-    classify_query.get_label()
+    clf = classifyQuery(api_provider='groq', persona='multi', query=None, model_name=None, correction_model=None)
+    clf.get_label()

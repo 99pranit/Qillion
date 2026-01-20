@@ -131,7 +131,7 @@ def display_result(result, query):
         col1, col2, col3 = st.columns([2, 1, 1])
         
         with col1:
-            color = LEVEL_COLORS.get(label, '#95a5a6')
+            color = LEVEL_COLORS.get(label, "#8e9899")
             st.markdown(f"""
             <div class="taxonomy-box" style="background-color: {color}20; border-left: 5px solid {color};">
                 <h3 style="color: {color}; margin: 0;">{label.upper()}</h3>
@@ -156,19 +156,19 @@ def main():
         
         api_provider = st.selectbox(
             "API Provider",
-            options=['groq'],
+            options=['groq', 'perplexity', 'gemini'],
             help="Currently supports Groq API"
         )
         
-        model_name = st.text_input(
+        model_name = st.selectbox(
             "Primary Model",
-            value="llama-3.1-70b-versatile",
+            options=['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'meta-llama/llama-4-scout-17b-16e-instruct'],
             help="Model for classification"
         )
         
-        correction_model = st.text_input(
+        correction_model = st.selectbox(
             "Correction Model",
-            value="llama-3.1-8b-instant",
+            options=['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'meta-llama/llama-4-scout-17b-16e-instruct'],
             help="Model for self-correction"
         )
         

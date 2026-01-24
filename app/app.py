@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from classify_query import classifyQuery
+from package.classify_query import classifyQuery
 import json
 from datetime import datetime
 import plotly.express as px

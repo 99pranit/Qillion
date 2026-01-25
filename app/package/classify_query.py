@@ -5,7 +5,8 @@ from collections import Counter
 class classifyQuery:
     def __init__(self, api_provider='groq', persona='multi', query=None, model_name=None, correction_model=None):
         # Use provided key or fall back to environment variable
-        self.api_key = os.environ.get(api_provider.upper() + "_API_KEY")
+        self.api_provider = api_provider
+        self.api_key = os.environ.get(self.api_provider.upper() + "_API_KEY")
         self.valid_labels = [
             'knowledge', 'comprehension', 'application', 
             'analysis', 'synthesis', 'evaluation'
@@ -51,6 +52,7 @@ class classifyQuery:
 
     def setup_api(self):
         """Initializes the Groq OpenAI client."""
+        self.api_key = os.environ.get(self.api_provider.upper() + "_API_KEY")
         if not self.api_key:
             raise ValueError("API Key is missing. Set GROQ_API_KEY env var or pass it to __init__.")
         

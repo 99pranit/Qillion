@@ -82,9 +82,7 @@ with st.sidebar:
         placeholder="Enter API key (optional if env var is set)"
     )
     
-    if api_key:
-        os.environ[f"{api_provider.upper()}_API_KEY"] = api_key
-    else:
+    if os.environ[f"{api_provider.upper()}_API_KEY"] is None:
         st.error("⚠️ API Key not found")
         st.info(f"Set {api_provider.upper()}_API_KEY environment variable")
 

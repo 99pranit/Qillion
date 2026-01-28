@@ -138,7 +138,7 @@ with st.sidebar:
         """)
 
 # Main tabs
-tab1, tab2, tab3 = st.tabs(["🔍 Classify", "📦 Batch Processing", "📊 History"])
+tab1, tab2, tab3, tab4 = st.tabs(["🔍 Classify", "📦 Batch Processing","💬 Chat-Bot" "📊 History"])
 
 # Tab 1: Single Query Classification
 with tab1:
@@ -233,50 +233,7 @@ with tab1:
                     st.error(f"⚠️ Error during classification: {str(e)}")
                     st.info("💡 Make sure your API key is set correctly and the model names are valid.")
 
-# Tab 2: History
-with tab2:
-    st.header("📊 Classification History")
-    
-    if st.session_state.classification_history:
-        # Clear history button
-        col1, col2 = st.columns([1, 4])
-        with col1:
-            if st.button("🗑️ Clear History"):
-                st.session_state.classification_history = []
-                st.rerun()
-        
-        # Convert history to DataFrame for better display
-        history_df = pd.DataFrame(st.session_state.classification_history)
-        
-        # Display as table
-        st.dataframe(
-            history_df[['query', 'label', 'persona', 'confidence']],
-            use_container_width=True,
-            hide_index=True
-        )
-        
-        # Download history as CSV
-        csv = history_df.to_csv(index=False)
-        st.download_button(
-            label="📥 Download History as CSV",
-            data=csv,
-            file_name="classification_history.csv",
-            mime="text/csv"
-        )
-        
-        # Detailed view
-        st.subheader("Detailed View")
-        for idx, item in enumerate(st.session_state.classification_history):
-            with st.expander(f"{idx+1}. {item['label'].capitalize()} - {item['query'][:50]}..."):
-                st.write(f"**Full Query:** {item['query']}")
-                st.write(f"**Level:** {item['label'].capitalize()}")
-                st.write(f"**Persona:** {item['persona'].capitalize()}")
-                if item['confidence'] < 1.0:
-                    st.write(f"**Confidence:** {item['confidence']:.1%}")
-    else:
-        st.info("No classifications yet. Go to the 'Classify' tab to begin!")
-
-# Tab 3: Batch Processing
+# Tab 2: Batch Processing
 with tab2:
     st.header("📦 Batch Processing")
     st.markdown("Upload a CSV or Excel file with queries to classify multiple items at once.")
@@ -412,6 +369,55 @@ with tab2:
         if st.button("🗑️ Clear Batch Results"):
             st.session_state.batch_results = None
             st.rerun()
+
+# Tab 3: ChatBot
+with tab3:
+    st.header("💬 Chat-Bot")
+
+
+# Tab 4: History
+with tab4:
+    st.header("📊 Classification History")
+    
+    if st.session_state.classification_history:
+        # Clear history button
+        col1, col2 = st.columns([1, 4])
+        with col1:
+            if st.button("🗑️ Clear History"):
+                st.session_state.classification_history = []
+                st.rerun()
+        
+        # Convert history to DataFrame for better display
+        history_df = pd.DataFrame(st.session_state.classification_history)
+        
+        # Display as table
+        st.dataframe(
+            history_df[['query', 'label', 'persona', 'confidence']],
+            use_container_width=True,
+            hide_index=True
+        )
+        
+        # Download history as CSV
+        csv = history_df.to_csv(index=False)
+        st.download_button(
+            label="📥 Download History as CSV",
+            data=csv,
+            file_name="classification_history.csv",
+            mime="text/csv"
+        )
+        
+        # Detailed view
+        st.subheader("Detailed View")
+        for idx, item in enumerate(st.session_state.classification_history):
+            with st.expander(f"{idx+1}. {item['label'].capitalize()} - {item['query'][:50]}..."):
+                st.write(f"**Full Query:** {item['query']}")
+                st.write(f"**Level:** {item['label'].capitalize()}")
+                st.write(f"**Persona:** {item['persona'].capitalize()}")
+                if item['confidence'] < 1.0:
+                    st.write(f"**Confidence:** {item['confidence']:.1%}")
+    else:
+        st.info("No classifications yet. Go to the 'Classify' tab to begin!")
+
 
 # Footer
 st.markdown("---")

@@ -3,7 +3,6 @@ from package.classify_query import classifyQuery
 import pandas as pd
 import io
 import os
-from openai import OpenAI
 
 # Page configuration
 st.set_page_config(
@@ -51,27 +50,6 @@ st.markdown("""
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
     }
-    .chat-message {
-        padding: 1rem;
-        border-radius: 0.5rem;
-        margin-bottom: 1rem;
-    }
-    .user-message {
-        background-color: #e3f2fd;
-        border-left: 4px solid #1565c0;
-    }
-    .assistant-message {
-        background-color: #f5f5f5;
-        border-left: 4px solid #666;
-    }
-    .taxonomy-tag {
-        display: inline-block;
-        padding: 0.25rem 0.5rem;
-        border-radius: 0.25rem;
-        font-size: 0.8rem;
-        font-weight: bold;
-        margin-left: 0.5rem;
-    }
     </style>
     """, unsafe_allow_html=True)
 
@@ -80,8 +58,6 @@ if 'classification_history' not in st.session_state:
     st.session_state.classification_history = []
 if 'batch_results' not in st.session_state:
     st.session_state.batch_results = None
-if 'chat_history' not in st.session_state:
-    st.session_state.chat_history = []
 
 # Header
 st.markdown('<div class="main-header">📚 Bloom\'s Taxonomy Query Classifier</div>', unsafe_allow_html=True)
@@ -106,10 +82,7 @@ with st.sidebar:
         placeholder="Enter API key (optional if env var is set)"
     )
     
-    if api_key:
-        os.environ[f"{api_provider.upper()}_API_KEY"] = api_key
-    
-    if os.environ.get(f"{api_provider.upper()}_API_KEY") is None:
+    if os.environ[f"{api_provider.upper()}_API_KEY"] is None:
         st.error("⚠️ API Key not found")
         st.info(f"Set {api_provider.upper()}_API_KEY environment variable")
 
@@ -125,14 +98,6 @@ with st.sidebar:
             options=['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'meta-llama/llama-4-scout-17b-16e-instruct'],
             help="Model for self-correction"
         )
-    
-    # ChatBot Model selection
-    st.header("💬 ChatBot Settings")
-    chat_model = st.selectbox(
-        "ChatBot Model",
-        options=['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'meta-llama/llama-4-scout-17b-16e-instruct'],
-        help="Model for generating chatbot responses"
-    )
     
     # Persona selection
     st.header("🎭 Classification Persona")
@@ -172,127 +137,8 @@ with st.sidebar:
         6. **Evaluation**: Making judgments based on criteria
         """)
 
-def get_taxonomy_system_prompt(taxonomy_level):
-    """Generate a system prompt based on Bloom's taxonomy level."""
-    
-    prompts = {
-        'knowledge': """You are an educational assistant specialized in providing factual, knowledge-level responses.
-
-Your role is to help users recall and recognize information. When responding:
-- Provide direct, accurate facts
-- Focus on definitions, terms, and basic concepts
-- Keep answers concise and to the point
-- List key information clearly
-- Help users remember and identify information""",
-
-        'comprehension': """You are an educational assistant specialized in helping users understand and explain concepts.
-
-Your role is to facilitate comprehension. When responding:
-- Explain concepts in clear, accessible language
-- Interpret and translate information
-- Provide examples to illustrate ideas
-- Summarize key points
-- Help users grasp the meaning and significance
-- Rephrase complex ideas in simpler terms
-""",
-
-        'application': """You are an educational assistant specialized in helping users apply knowledge to new situations.
-
-Your role is to guide practical application. When responding:
-- Show how to use concepts in real-world scenarios
-- Provide step-by-step procedures
-- Give concrete examples of application
-- Demonstrate problem-solving approaches
-- Help users transfer knowledge to new contexts
-- Offer practice opportunities
-""",
-
-        'analysis': """You are an educational assistant specialized in helping users analyze and break down information.
-
-Your role is to facilitate analytical thinking. When responding:
-- Break down complex information into components
-- Examine relationships between parts
-- Compare and contrast different elements
-- Identify patterns and underlying structures
-- Distinguish between facts and inferences
-- Analyze cause-and-effect relationships
-""",
-
-        'synthesis': """You are an educational assistant specialized in helping users create and synthesize new ideas.
-
-Your role is to foster creative thinking. When responding:
-- Help combine ideas in innovative ways
-- Guide the creation of new solutions
-- Encourage original thinking
-- Support the development of plans and proposals
-- Facilitate the integration of diverse concepts
-- Promote creative problem-solving
-""",
-
-        'evaluation': """You are an educational assistant specialized in helping users make informed judgments and evaluations.
-
-Your role is to guide critical evaluation. When responding:
-- Help assess based on clear criteria
-- Present multiple perspectives for consideration
-- Encourage critical thinking
-- Support evidence-based judgment
-- Guide the evaluation of arguments and solutions
-- Promote justified decision-making
-"""
-    }
-    
-    return prompts.get(taxonomy_level, prompts['knowledge'])
-
-def generate_llm_response(query, taxonomy_level, chat_model_name, chat_history=None):
-    """Generate response using Groq API with taxonomy-aware prompt engineering."""
-    
-    try:
-        # Initialize Groq client
-        api_key = os.environ.get("GROQ_API_KEY")
-        if not api_key:
-            return "Error: GROQ_API_KEY not found. Please set your API key in the sidebar."
-        
-        client = OpenAI(
-            base_url = "https://api.groq.com/openai/v1",
-            api_key = api_key
-        )
-        
-        # Get taxonomy-specific system prompt
-        system_prompt = get_taxonomy_system_prompt(taxonomy_level)
-        
-        # Build messages array
-        messages = [
-            {"role": "system", 
-             "content": system_prompt}
-        ]
-        
-        # Add chat history if available
-        if chat_history:
-            for msg in chat_history[-6:]:  # Include last 6 messages for context
-                messages.append({
-                    "role": msg["role"],
-                    "content": msg["content"]
-                })
-        
-        # Add current user query
-        messages.append({
-            "role": "user",
-            "content": "query: " + query
-        })
-        
-        # Call Groq API
-        response = client.chat.completions.create(
-            model=chat_model_name,
-            messages=messages
-        )
-        
-        return response.choices[0].message.content.lower()
-        
-    except Exception as e:
-        return f"Error generating response: {str(e)}"
-
 # Main tabs
-tab1, tab2, tab3, tab4 = st.tabs(["🔍 Classify", "📦 Batch Processing", "💬 ChatBot", "📊 History"])
+tab1, tab2, tab3, tab4 = st.tabs(["🔍 Classify", "📦 Batch Processing","💬 Chat-Bot" "📊 History"])
 
 # Tab 1: Single Query Classification
 with tab1:
@@ -367,6 +213,7 @@ with tab1:
                     st.markdown(f'<div class="taxonomy-badge {label}">{label.upper()}</div>', 
                                unsafe_allow_html=True)
                     
+                    # Taxonomy descriptions
                     taxonomy_info = {
                         'knowledge': 'Recalling facts, terms, basic concepts, or answers',
                         'comprehension': 'Demonstrating understanding by interpreting, summarizing, or explaining',
@@ -523,115 +370,10 @@ with tab2:
             st.session_state.batch_results = None
             st.rerun()
 
-# Tab 3: ChatBot with Bloom's Taxonomy Context
+# Tab 3: ChatBot
 with tab3:
-    st.header("💬 Taxonomy-Aware ChatBot")
-    st.markdown("Ask questions and receive AI-generated responses tailored to the cognitive level of your query using Groq LLM.")
+    st.header("💬 Chat-Bot")
 
-    # ChatBot settings
-    with st.expander("⚙️ ChatBot Settings"):
-        auto_classify = st.checkbox("Auto-classify queries", value=True, 
-                                    help="Automatically detect Bloom's taxonomy level for each query")
-        show_taxonomy_tags = st.checkbox("Show taxonomy tags", value=True,
-                                        help="Display taxonomy level with each message")
-        include_context = st.checkbox("Include conversation context", value=True,
-                                     help="Send previous messages to LLM for better context")
-    
-    # Display chat history
-    st.subheader("💭 Conversation")
-    
-    chat_container = st.container()
-    with chat_container:
-        for idx, message in enumerate(st.session_state.chat_history):
-            if message['role'] == 'user':
-                taxonomy_tag = ""
-                if show_taxonomy_tags and 'taxonomy' in message and message['taxonomy']:
-                    taxonomy_level = message['taxonomy']
-                    taxonomy_tag = f'<span class="taxonomy-tag {taxonomy_level}">{taxonomy_level.upper()}</span>'
-                
-                st.markdown(
-                    f'<div class="chat-message user-message">'
-                    f'<strong>You:</strong> {message["content"]}{taxonomy_tag}'
-                    f'</div>',
-                    unsafe_allow_html=True
-                )
-            else:
-                st.markdown(
-                    f'<div class="chat-message assistant-message">'
-                    f'<strong>Assistant:</strong> {message["content"]}'
-                    f'</div>',
-                    unsafe_allow_html=True
-                )
-    
-    # Chat input
-    user_input = st.text_input("Your message:", key="chat_input", placeholder="Type your question here...")
-    
-    col1, col2 = st.columns([1, 5])
-    with col1:
-        send_button = st.button("📤 Send", type="primary")
-    with col2:
-        if st.button("🗑️ Clear Chat"):
-            st.session_state.chat_history = []
-            st.rerun()
-    
-    if send_button and user_input.strip():
-        # Classify the query if auto-classify is enabled
-        taxonomy_level = None
-        if auto_classify:
-            with st.spinner("🔄 Analyzing query..."):
-                try:
-                    classifier = classifyQuery(
-                        api_provider=api_provider,
-                        persona=persona,
-                        query=user_input,
-                        model_name=model_name,
-                        correction_model=correction_model
-                    )
-                    
-                    if persona == 'multi':
-                        result = classifier.get_ensemble_label()
-                        taxonomy_level = result['final_label']
-                    else:
-                        taxonomy_level = classifier.get_label()
-                except Exception as e:
-                    st.error(f"Classification error: {str(e)}")
-                    taxonomy_level = "knowledge"  # Default fallback
-        else:
-            taxonomy_level = "knowledge"  # Default when auto-classify is off
-        
-        # Add user message to chat history
-        user_message = {
-            'role': 'user',
-            'content': user_input,
-            'taxonomy': taxonomy_level
-        }
-        st.session_state.chat_history.append(user_message)
-        
-        # Generate LLM response with taxonomy-aware prompt
-        with st.spinner(f"🤖 Generating {taxonomy_level}-level response..."):
-            if include_context:
-                response = generate_llm_response(
-                    user_input, 
-                    taxonomy_level, 
-                    chat_model,
-                    st.session_state.chat_history[:-1]  # Exclude the just-added user message
-                )
-            else:
-                response = generate_llm_response(
-                    user_input, 
-                    taxonomy_level, 
-                    chat_model,
-                    None
-                )
-        
-        # Add assistant response to chat history
-        assistant_message = {
-            'role': 'assistant',
-            'content': response
-        }
-        st.session_state.chat_history.append(assistant_message)
-        
-        st.rerun()
 
 # Tab 4: History
 with tab4:

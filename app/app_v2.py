@@ -4,6 +4,7 @@ from package.identify_purpose import identifyPurpose
 import pandas as pd
 import io
 import os
+import random
 
 # Page configuration
 st.set_page_config(
@@ -290,20 +291,6 @@ with tab2:
                 help="Choose which column contains the text to classify"
             )
             
-            # Enable purpose identification for batch
-            batch_enable_purpose = st.checkbox(
-                "Include Purpose Identification",
-                value=False,
-                help="Identify purpose for each query (slower processing)"
-            )
-            
-            # Enable content generation for batch
-            batch_generate_content = st.checkbox(
-                "Generate Content for Each Query",
-                value=False,
-                help="Generate tailored content for each query (significantly slower)"
-            )
-            
             # Process button
             if st.button("🚀 Process Batch", type="primary"):
                 if not query_column:
@@ -348,69 +335,6 @@ with tab2:
                                 'confidence': confidence
                             }
                             
-                            # Get purpose if enabled
-                            if batch_enable_purpose:
-                                try:
-                                    purpose_identifier = identifyPurpose(
-                                        api_provider=api_provider,
-                                        query=query_text,
-                                        model_name=model_name,
-                                        cognitive_level=label
-                                    )
-                                    purpose_identifier.setup_api()
-                                    purpose = purpose_identifier.get_purpose()
-                                    result_entry['purpose'] = purpose
-                                except:
-                                    result_entry['purpose'] = 'N/A'
-                            
-                            # Generate content if enabled
-                            if batch_generate_content:
-                                try:
-                                    purpose_text = result_entry.get('purpose', 'general learning')
-                                    
-                                    content_prompt = f"""You are an expert educational content creator. Generate concise, high-quality content for the following query.
-
-Query: {query_text}
-
-Cognitive Level: {label.upper()} (Bloom's Taxonomy)
-User's Purpose/Intent: {purpose_text}
-
-Generate focused content (100-200 words) that:
-1. Addresses the {label} level of Bloom's Taxonomy
-2. Helps achieve the user's purpose
-3. Is clear and appropriate for this cognitive level
-
-Content:"""
-
-                                    from openai import OpenAI
-                                    
-                                    client = OpenAI(
-                                        base_url="https://api.groq.com/openai/v1",
-                                        api_key=os.environ.get(f"{api_provider.upper()}_API_KEY")
-                                    )
-                                    
-                                    chat_completion = client.chat.completions.create(
-                                        messages=[
-                                            {
-                                                "role": "system",
-                                                "content": "You are an expert educational content creator."
-                                            },
-                                            {
-                                                "role": "user",
-                                                "content": content_prompt
-                                            }
-                                        ],
-                                        model=model_name,
-                                        max_tokens=500,
-                                        temperature=0.7
-                                    )
-                                    
-                                    generated_content = chat_completion.choices[0].message.content
-                                    result_entry['generated_content'] = generated_content
-                                except Exception as content_error:
-                                    result_entry['generated_content'] = f'Error: {str(content_error)}'
-                            
-                            results.append(result_entry)
                             
                         except Exception as e:
                             result_entry = {
@@ -418,10 +342,6 @@ Content:"""
                                 'label': 'ERROR',
                                 'confidence': 0.0
                             }
-                            if batch_enable_purpose:
-                                result_entry['purpose'] = 'N/A'
-                            if batch_generate_content:
-                                result_entry['generated_content'] = 'N/A'
                             results.append(result_entry)
                             st.warning(f"Error processing row {idx + 1}: {str(e)}")
                     
@@ -640,6 +560,14 @@ with tab3:
         
         st.write(f"**Cognitive Level:** {st.session_state.chat_current_label.capitalize()}")
         st.write(f"**Your Goal:** {st.session_state.chat_current_purpose}")
+
+
+        content_generation_model = st.selectbox(
+            "Cotent Generation Model",
+            options=['openai/gpt-oss-120b', 'meta-llama/llama-4-scout-17b-16e-instruct', 
+                     'llama-3.3-70b-versatile', 'qwen/qwen3-32b', 'moonshotai/kimi-k2-instruct-0905'],
+            help="Model to generate content"
+            )
         
         # Generate content button
         if st.button("🎨 Generate My Learning Content", type="primary", key="chat_generate_content", use_container_width=True):
@@ -683,9 +611,8 @@ Generate comprehensive educational content now:"""
                                 "content": content_prompt
                             }
                         ],
-                        model=model_name,
-                        max_tokens=2048,
-                        temperature=0.7
+                        model=content_generation_model,
+                        temperature=random.uniform(5,8)/10
                     )
                     
                     generated_content = chat_completion.choices[0].message.content

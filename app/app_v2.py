@@ -1,6 +1,7 @@
 import streamlit as st
 from package.classify_query import classifyQuery
 from package.identify_purpose import identifyPurpose
+from package.learning_path import learningPath
 import pandas as pd
 import io
 import os
@@ -426,7 +427,7 @@ with tab2:
 with tab3:
     st.header("💬 AI Educational Assistant")
     st.info("🎯 Get personalized educational content tailored to your learning needs!")
-    
+
     # Query input
     query_chat = st.text_area(
         "Ask your educational question:",
@@ -435,10 +436,10 @@ with tab3:
         help="Enter any educational question",
         key="query_chatbot_tab3"
     )
-    
+
     # Start button
     start_button = st.button("🚀 Start Learning Journey", type="primary", key="start_chat")
-    
+
     if start_button:
         if not query_chat.strip():
             st.error("⚠️ Please enter a question to begin")
@@ -448,13 +449,15 @@ with tab3:
             st.session_state.chat_current_purpose = None
             st.session_state.chat_show_generated_content = False
             st.session_state.chat_generated_content = None
-            
+            st.session_state.chat_learning_path = None          # ← new
+            st.session_state.chat_purpose_identifier = None     # ← cache the object
+
             with st.spinner("🔄 Analyzing your question..."):
                 try:
-                    # Step 1: Classify cognitive level
+                    # ── Step 1: Classify cognitive level ──────────────────────
                     st.markdown("---")
                     st.subheader("📊 Step 1: Cognitive Level Analysis")
-                    
+
                     classifier = classifyQuery(
                         api_provider=api_provider,
                         persona=persona,
@@ -462,7 +465,7 @@ with tab3:
                         model_name=model_name,
                         correction_model=correction_model
                     )
-                    
+
                     if persona == 'multi':
                         result = classifier.get_ensemble_label()
                         label = result['final_label']
@@ -470,30 +473,30 @@ with tab3:
                     else:
                         label = classifier.get_label()
                         confidence = 1.0
-                    
+
                     st.session_state.chat_current_label = label
-                    
-                    st.markdown(f'<div class="taxonomy-badge {label}">{label.upper()}</div>', 
+
+                    st.markdown(f'<div class="taxonomy-badge {label}">{label.upper()}</div>',
                                 unsafe_allow_html=True)
-                    
+
                     taxonomy_info = {
-                        'knowledge': 'Recalling facts, terms, basic concepts, or answers',
+                        'knowledge':     'Recalling facts, terms, basic concepts, or answers',
                         'comprehension': 'Demonstrating understanding by interpreting, summarizing, or explaining',
-                        'application': 'Using learned information in new concrete situations',
-                        'analysis': 'Breaking down information into parts and examining relationships',
-                        'synthesis': 'Combining elements to form a new whole or proposing solutions',
-                        'evaluation': 'Making judgments based on criteria and standards'
+                        'application':   'Using learned information in new concrete situations',
+                        'analysis':      'Breaking down information into parts and examining relationships',
+                        'synthesis':     'Combining elements to form a new whole or proposing solutions',
+                        'evaluation':    'Making judgments based on criteria and standards'
                     }
-                    
+
                     st.info(f"**Level Description:** {taxonomy_info.get(label, 'N/A')}")
-                    
+
                     if persona == 'multi':
                         st.metric("Classification Confidence", f"{confidence:.1%}")
-                    
-                    # Step 2: Identify purpose
+
+                    # ── Step 2: Identify purpose ───────────────────────────────
                     st.markdown("---")
                     st.subheader("🎯 Step 2: Understanding Your Intent")
-                    
+
                     with st.spinner("🔍 Analyzing what you want to achieve..."):
                         try:
                             purpose_identifier = identifyPurpose(
@@ -504,108 +507,155 @@ with tab3:
                             )
                             purpose_identifier.setup_api()
                             purpose = purpose_identifier.get_purpose()
+
+                            # Cache the object so we can call get_learning_path() later
+                            st.session_state.chat_purpose_identifier = purpose_identifier
                             st.session_state.chat_current_purpose = purpose
-                            
+
                         except Exception as e:
                             st.error(f"⚠️ Error identifying purpose: {str(e)}")
-                            purpose = None
-                    
+
                 except Exception as e:
                     st.error(f"⚠️ Error during analysis: {str(e)}")
                     st.info("💡 Make sure your API key is set correctly and the model names are valid.")
-    
-    # Display purpose and get feedback
+
+    # ── Display purpose and get confirmation ──────────────────────────────────
     if st.session_state.get('chat_current_purpose') and not st.session_state.get('chat_purpose_confirmed', False):
         st.markdown("---")
         st.subheader("🎯 Identified Learning Goal")
-        
-        st.markdown(f'<div class="purpose-box"><strong>🎯 Your Intent:</strong> {st.session_state.chat_current_purpose}</div>', 
-                    unsafe_allow_html=True)
-        
+
+        st.markdown(
+            f'<div class="purpose-box"><strong>🎯 Your Intent:</strong> {st.session_state.chat_current_purpose}</div>',
+            unsafe_allow_html=True
+        )
+
         st.write("**Is this what you want to achieve?**")
-        
+
         col1, col2 = st.columns(2)
         with col1:
             if st.button("✅ Yes, that's correct", key="chat_confirm_purpose", use_container_width=True):
                 st.session_state.chat_purpose_confirmed = True
                 st.rerun()
-        
+
         with col2:
             if st.button("✏️ No, let me clarify", key="chat_edit_purpose", use_container_width=True):
                 st.session_state.chat_purpose_confirmed = False
                 st.session_state.chat_show_purpose_editor = True
                 st.rerun()
-        
-        # Show purpose editor if user wants to edit
+
         if st.session_state.get('chat_show_purpose_editor', False):
             st.markdown("**Clarify Your Learning Goal:**")
             edited_purpose = st.text_area(
                 "What do you want to achieve or learn?",
                 value=st.session_state.chat_current_purpose,
                 height=100,
-                help="Describe what you want to do with this information",
                 key="chat_purpose_editor"
             )
-            
+
             if st.button("💾 Save My Goal", key="chat_save_purpose"):
                 st.session_state.chat_current_purpose = edited_purpose
                 st.session_state.chat_purpose_confirmed = True
                 st.session_state.chat_show_purpose_editor = False
                 st.rerun()
-    
-    # Generate content after purpose confirmation
+
+    # ── After confirmation: generate learning path then content ───────────────
     if st.session_state.get('chat_purpose_confirmed', False) and st.session_state.get('chat_current_purpose'):
         st.markdown("---")
-        st.subheader("✨ Step 3: Generate Personalized Content")
-        
+        st.subheader("🗺️ Step 3: Your Personalized Learning Path")
+
+        # Generate learning path if not yet generated
+        with st.spinner("🧭 Building your learning path..."):
+            try:
+                learning_path = learningPath(
+                    api_provider=api_provider,
+                    query=st.session_state.chat_query,
+                    model_name=model_name,
+                    cognitive_level=st.session_state.chat_current_label,
+                    user_purpose=st.session_state.chat_current_purpose
+                )
+                learning_path.setup_api()
+
+                learning_path = learning_path.get_learning_path()
+                st.session_state.chat_learning_path = learning_path
+
+            except Exception as e:
+                st.error(f"⚠️ Error generating learning path: {str(e)}")
+
+        # Display learning path
+        if st.session_state.get('chat_learning_path'):
+            lp = st.session_state.chat_learning_path
+            lp_title = lp.get('learning_path_title', 'Your Learning Path')
+            lp_duration = lp.get('estimated_duration', '')
+
+            st.markdown(f"### 📘 {lp_title}")
+            if lp_duration:
+                st.caption(f"⏱️ Estimated total duration: **{lp_duration}**")
+
+        # ── Step 4: Generate content ──────────────────────────────────────────
+        st.markdown("---")
+        st.subheader("✨ Step 4: Generate Personalized Content")
+
         st.write(f"**Cognitive Level:** {st.session_state.chat_current_label.capitalize()}")
         st.write(f"**Your Goal:** {st.session_state.chat_current_purpose}")
 
-
         content_generation_model = st.selectbox(
-            "Cotent Generation Model",
-            options=['openai/gpt-oss-120b', 'meta-llama/llama-4-scout-17b-16e-instruct', 
-                     'llama-3.3-70b-versatile', 'qwen/qwen3-32b', 'moonshotai/kimi-k2-instruct-0905'],
+            "Content Generation Model",
+            options=[
+                'openai/gpt-oss-120b',
+                'meta-llama/llama-4-scout-17b-16e-instruct',
+                'llama-3.3-70b-versatile',
+                'qwen/qwen3-32b',
+                'moonshotai/kimi-k2-instruct-0905'
+            ],
             help="Model to generate content"
-            )
-        
-        # Generate content button
-        if st.button("🎨 Generate My Learning Content", type="primary", key="chat_generate_content", use_container_width=True):
+        )
+
+        if st.button("🎨 Generate My Learning Content", type="primary",
+                     key="chat_generate_content", use_container_width=True):
             st.session_state.chat_show_generated_content = True
-            
+
             with st.spinner("✨ Creating personalized educational content for you..."):
                 try:
-                    # Build content generation prompt
-                    content_prompt = f"""You are an expert educational content creator. Generate comprehensive, high-quality educational content for the following query.
+                    content_prompt = f"""You are an expert educational content creator. \
+Generate comprehensive, high-quality educational content for the following query.
 
 Query: {st.session_state.chat_query}
 
 Cognitive Level: {st.session_state.chat_current_label.upper()} (Bloom's Taxonomy)
 User's Learning Goal: {st.session_state.chat_current_purpose}
-Learning Path: {}
+
+Learning Path:
+{st.session_state.chat_learning_path}
 
 Instructions:
-1. Tailor the content to the {st.session_state.chat_current_label} level of Bloom's Taxonomy
-2. Ensure the content helps achieve the user's specific learning goal: {st.session_state.chat_current_purpose}
-3. Make it clear, engaging, and appropriate for this cognitive level
-4. Include relevant examples, explanations, step-by-step guidance, or practice as needed
-5. Use a friendly, educational tone
+1. Follow the learning path stages above in sequence when structuring your content.
+2. Tailor depth and complexity to the {st.session_state.chat_current_label} level of Bloom's Taxonomy.
+3. Ensure the content directly helps the user achieve: {st.session_state.chat_current_purpose}
+4. For each stage in the learning path, provide a dedicated section with:
+   - Clear explanation of concepts
+   - Worked examples or demonstrations where relevant
+   - A short activity or reflection question tied to the stage milestone
+5. Use a friendly, educational tone throughout.
+6. End with a summary and suggested next steps beyond the learning path.
 
 Generate comprehensive educational content now:"""
 
-                    # Use the API to generate content
                     from openai import OpenAI
-                    
+
                     client = OpenAI(
                         base_url="https://api.groq.com/openai/v1",
                         api_key=os.environ.get(f"{api_provider.upper()}_API_KEY")
                     )
-                    
+
                     chat_completion = client.chat.completions.create(
                         messages=[
                             {
                                 "role": "system",
-                                "content": "You are an expert educational content creator who tailors content based on Bloom's Taxonomy levels and user learning goals. You create engaging, clear, and comprehensive educational materials."
+                                "content": (
+                                    "You are an expert educational content creator who tailors content "
+                                    "based on Bloom's Taxonomy levels, user learning goals, and structured "
+                                    "learning paths. You create engaging, clear, and comprehensive educational materials."
+                                )
                             },
                             {
                                 "role": "user",
@@ -613,28 +663,26 @@ Generate comprehensive educational content now:"""
                             }
                         ],
                         model=content_generation_model,
-                        temperature=random.uniform(5,8)/10
+                        temperature=random.uniform(5, 8) / 10
                     )
-                    
+
                     generated_content = chat_completion.choices[0].message.content
                     st.session_state.chat_generated_content = generated_content
-                    
+
                 except Exception as e:
                     st.error(f"⚠️ Error generating content: {str(e)}")
                     st.session_state.chat_generated_content = None
-        
-        # Display generated content
+
+        # ── Display generated content ─────────────────────────────────────────
         if st.session_state.get('chat_show_generated_content', False) and st.session_state.get('chat_generated_content'):
             st.markdown("---")
             st.subheader("📚 Your Personalized Learning Content")
-            
-            # Display content in an expandable box
+
             with st.container():
                 st.markdown(st.session_state.chat_generated_content)
-            
+
             st.markdown("---")
-            
-            # Content metadata and actions
+
             col1, col2, col3 = st.columns(3)
             with col1:
                 st.metric("📊 Cognitive Level", st.session_state.chat_current_label.capitalize())
@@ -644,10 +692,10 @@ Generate comprehensive educational content now:"""
             with col3:
                 reading_time = max(1, word_count // 200)
                 st.metric("⏱️ Reading Time", f"~{reading_time} min")
-            
+
             # Action buttons
             col1, col2, col3 = st.columns(3)
-            
+
             with col1:
                 st.download_button(
                     label="📥 Download as TXT",
@@ -656,100 +704,49 @@ Generate comprehensive educational content now:"""
                     mime="text/plain",
                     use_container_width=True
                 )
-            
+
             with col2:
                 if st.button("📄 Download as Word", key="chat_download_word", use_container_width=True):
                     st.session_state.generate_word = True
                     st.rerun()
-            
+
             with col3:
                 if st.button("📕 Download as PDF", key="chat_download_pdf", use_container_width=True):
                     st.session_state.generate_pdf = True
                     st.rerun()
-            
-            # Generate Word document if requested
+
+            # ── Word export ───────────────────────────────────────────────────
             if st.session_state.get('generate_word', False):
                 with st.spinner("Creating Word document..."):
                     try:
-                        import subprocess
-                        import json
-                        
-                        # Create Node.js script to generate DOCX
+                        import subprocess, json
+
                         docx_script = f"""
-const {{ Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType }} = require('docx');
+const {{ Document, Packer, Paragraph, TextRun, HeadingLevel }} = require('docx');
 const fs = require('fs');
 
 const content = {json.dumps(st.session_state.chat_generated_content)};
-const query = {json.dumps(st.session_state.chat_query)};
-const level = {json.dumps(st.session_state.chat_current_label.capitalize())};
+const query   = {json.dumps(st.session_state.chat_query)};
+const level   = {json.dumps(st.session_state.chat_current_label.capitalize())};
 const purpose = {json.dumps(st.session_state.chat_current_purpose)};
 
-// Split content into paragraphs
 const paragraphs = content.split('\\n').filter(p => p.trim() !== '');
 
-// Create document sections
 const sections = [
-    new Paragraph({{
-        text: "Educational Content",
-        heading: HeadingLevel.HEADING_1,
-        spacing: {{ after: 240 }}
-    }}),
-    new Paragraph({{
-        children: [
-            new TextRun({{ text: "Query: ", bold: true }}),
-            new TextRun(query)
-        ],
-        spacing: {{ after: 120 }}
-    }}),
-    new Paragraph({{
-        children: [
-            new TextRun({{ text: "Cognitive Level: ", bold: true }}),
-            new TextRun(level)
-        ],
-        spacing: {{ after: 120 }}
-    }}),
-    new Paragraph({{
-        children: [
-            new TextRun({{ text: "Learning Goal: ", bold: true }}),
-            new TextRun(purpose)
-        ],
-        spacing: {{ after: 240 }}
-    }}),
-    new Paragraph({{
-        text: "Content",
-        heading: HeadingLevel.HEADING_2,
-        spacing: {{ before: 240, after: 120 }}
-    }})
+    new Paragraph({{ text: "Educational Content", heading: HeadingLevel.HEADING_1, spacing: {{ after: 240 }} }}),
+    new Paragraph({{ children: [new TextRun({{ text: "Query: ", bold: true }}), new TextRun(query)], spacing: {{ after: 120 }} }}),
+    new Paragraph({{ children: [new TextRun({{ text: "Cognitive Level: ", bold: true }}), new TextRun(level)], spacing: {{ after: 120 }} }}),
+    new Paragraph({{ children: [new TextRun({{ text: "Learning Goal: ", bold: true }}), new TextRun(purpose)], spacing: {{ after: 240 }} }}),
+    new Paragraph({{ text: "Content", heading: HeadingLevel.HEADING_2, spacing: {{ before: 240, after: 120 }} }})
 ];
 
-// Add content paragraphs
 paragraphs.forEach(para => {{
-    sections.push(new Paragraph({{
-        text: para,
-        spacing: {{ after: 120 }}
-    }}));
+    sections.push(new Paragraph({{ text: para, spacing: {{ after: 120 }} }}));
 }});
 
 const doc = new Document({{
-    styles: {{
-        default: {{
-            document: {{
-                run: {{ font: "Arial", size: 24 }}
-            }}
-        }}
-    }},
-    sections: [{{
-        properties: {{
-            page: {{
-                size: {{
-                    width: 12240,
-                    height: 15840
-                }},
-                margin: {{ top: 1440, right: 1440, bottom: 1440, left: 1440 }}
-            }}
-        }},
-        children: sections
-    }}]
+    styles: {{ default: {{ document: {{ run: {{ font: "Arial", size: 24 }} }} }} }},
+    sections: [{{ properties: {{ page: {{ size: {{ width: 12240, height: 15840 }}, margin: {{ top: 1440, right: 1440, bottom: 1440, left: 1440 }} }} }}, children: sections }}]
 }});
 
 Packer.toBuffer(doc).then(buffer => {{
@@ -757,23 +754,15 @@ Packer.toBuffer(doc).then(buffer => {{
     console.log('Document created successfully');
 }});
 """
-                        
-                        # Write script to file
                         with open('/home/claude/create_docx.js', 'w') as f:
                             f.write(docx_script)
-                        
-                        # Install docx if not already installed
-                        subprocess.run(['npm', 'install', '-g', 'docx'], 
-                                     capture_output=True, check=True)
-                        
-                        # Run the script
-                        result = subprocess.run(['node', '/home/claude/create_docx.js'], 
-                                              capture_output=True, text=True, check=True)
-                        
-                        # Read the generated file
+
+                        subprocess.run(['npm', 'install', '-g', 'docx'], capture_output=True, check=True)
+                        subprocess.run(['node', '/home/claude/create_docx.js'], capture_output=True, text=True, check=True)
+
                         with open('/home/claude/learning_content.docx', 'rb') as f:
                             docx_data = f.read()
-                        
+
                         st.download_button(
                             label="✅ Click to Download Word Document",
                             data=docx_data,
@@ -781,14 +770,13 @@ Packer.toBuffer(doc).then(buffer => {{
                             mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                             type="primary"
                         )
-                        
                         st.session_state.generate_word = False
-                        
+
                     except Exception as e:
-                        st.error(f"Error creating Word document: {{str(e)}}")
+                        st.error(f"Error creating Word document: {str(e)}")
                         st.session_state.generate_word = False
-            
-            # Generate PDF if requested
+
+            # ── PDF export ────────────────────────────────────────────────────
             if st.session_state.get('generate_pdf', False):
                 with st.spinner("Creating PDF document..."):
                     try:
@@ -796,67 +784,41 @@ Packer.toBuffer(doc).then(buffer => {{
                         from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
                         from reportlab.lib.units import inch
                         from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
-                        from reportlab.lib.enums import TA_LEFT, TA_JUSTIFY
-                        
-                        # Create PDF
+                        from reportlab.lib.enums import TA_JUSTIFY
+
                         pdf_path = '/home/claude/learning_content.pdf'
                         doc = SimpleDocTemplate(pdf_path, pagesize=letter,
-                                              rightMargin=72, leftMargin=72,
-                                              topMargin=72, bottomMargin=18)
-                        
-                        # Container for elements
+                                                rightMargin=72, leftMargin=72,
+                                                topMargin=72, bottomMargin=18)
+
                         elements = []
                         styles = getSampleStyleSheet()
-                        
-                        # Custom styles
-                        title_style = ParagraphStyle(
-                            'CustomTitle',
-                            parent=styles['Heading1'],
-                            fontSize=18,
-                            textColor='#1f77b4',
-                            spaceAfter=12
-                        )
-                        
-                        heading_style = ParagraphStyle(
-                            'CustomHeading',
-                            parent=styles['Heading2'],
-                            fontSize=14,
-                            spaceAfter=6
-                        )
-                        
-                        body_style = ParagraphStyle(
-                            'CustomBody',
-                            parent=styles['Normal'],
-                            fontSize=11,
-                            alignment=TA_JUSTIFY,
-                            spaceAfter=12
-                        )
-                        
-                        # Add content
+
+                        title_style = ParagraphStyle('CustomTitle', parent=styles['Heading1'],
+                                                     fontSize=18, spaceAfter=12)
+                        heading_style = ParagraphStyle('CustomHeading', parent=styles['Heading2'],
+                                                       fontSize=14, spaceAfter=6)
+                        body_style = ParagraphStyle('CustomBody', parent=styles['Normal'],
+                                                    fontSize=11, alignment=TA_JUSTIFY, spaceAfter=12)
+
                         elements.append(Paragraph("Educational Content", title_style))
-                        elements.append(Spacer(1, 0.2*inch))
-                        
-                        elements.append(Paragraph(f"<b>Query:</b> {{st.session_state.chat_query}}", body_style))
-                        elements.append(Paragraph(f"<b>Cognitive Level:</b> {{st.session_state.chat_current_label.capitalize()}}", body_style))
-                        elements.append(Paragraph(f"<b>Learning Goal:</b> {{st.session_state.chat_current_purpose}}", body_style))
-                        elements.append(Spacer(1, 0.3*inch))
-                        
+                        elements.append(Spacer(1, 0.2 * inch))
+                        elements.append(Paragraph(f"<b>Query:</b> {st.session_state.chat_query}", body_style))
+                        elements.append(Paragraph(f"<b>Cognitive Level:</b> {st.session_state.chat_current_label.capitalize()}", body_style))
+                        elements.append(Paragraph(f"<b>Learning Goal:</b> {st.session_state.chat_current_purpose}", body_style))
+                        elements.append(Spacer(1, 0.3 * inch))
                         elements.append(Paragraph("Content", heading_style))
-                        elements.append(Spacer(1, 0.1*inch))
-                        
-                        # Add content paragraphs
-                        paragraphs = st.session_state.chat_generated_content.split('\\n')
-                        for para in paragraphs:
+                        elements.append(Spacer(1, 0.1 * inch))
+
+                        for para in st.session_state.chat_generated_content.split('\n'):
                             if para.strip():
                                 elements.append(Paragraph(para, body_style))
-                        
-                        # Build PDF
+
                         doc.build(elements)
-                        
-                        # Read the generated file
+
                         with open(pdf_path, 'rb') as f:
                             pdf_data = f.read()
-                        
+
                         st.download_button(
                             label="✅ Click to Download PDF Document",
                             data=pdf_data,
@@ -864,14 +826,13 @@ Packer.toBuffer(doc).then(buffer => {{
                             mime="application/pdf",
                             type="primary"
                         )
-                        
                         st.session_state.generate_pdf = False
-                        
+
                     except Exception as e:
-                        st.error(f"Error creating PDF: {{str(e)}}")
+                        st.error(f"Error creating PDF: {str(e)}")
                         st.session_state.generate_pdf = False
-            
-            # Regenerate button
+
+            # ── Regenerate ────────────────────────────────────────────────────
             st.markdown("---")
             if st.button("🔄 Regenerate Content", key="chat_regenerate", use_container_width=True):
                 st.session_state.chat_show_generated_content = False
@@ -879,54 +840,44 @@ Packer.toBuffer(doc).then(buffer => {{
                 st.session_state.generate_word = False
                 st.session_state.generate_pdf = False
                 st.rerun()
-            
-            # Store in history
+
+            # ── History ───────────────────────────────────────────────────────
             if st.session_state.chat_current_label:
                 history_entry = {
-                    'query': st.session_state.chat_query,
-                    'label': st.session_state.chat_current_label,
-                    'confidence': 1.0,
-                    'persona': persona,
-                    'purpose': st.session_state.chat_current_purpose,
+                    'query':             st.session_state.chat_query,
+                    'label':             st.session_state.chat_current_label,
+                    'confidence':        1.0,
+                    'persona':           persona,
+                    'purpose':           st.session_state.chat_current_purpose,
+                    'learning_path':     st.session_state.get('chat_learning_path'),
                     'generated_content': st.session_state.chat_generated_content
                 }
-                
-                # Check if not already in history
-                if not any(h['query'] == history_entry['query'] and 
-                          h.get('purpose') == history_entry['purpose'] 
-                          for h in st.session_state.classification_history):
+
+                if not any(h['query'] == history_entry['query'] and
+                           h.get('purpose') == history_entry['purpose']
+                           for h in st.session_state.classification_history):
                     st.session_state.classification_history.insert(0, history_entry)
-            
-            # Feedback section
+
+            # ── Feedback ──────────────────────────────────────────────────────
             st.markdown("---")
             st.subheader("📣 How was this content?")
             feedback_cols = st.columns(5)
-            
-            with feedback_cols[0]:
-                st.button("⭐", key="feedback_1")
-            with feedback_cols[1]:
-                st.button("⭐⭐", key="feedback_2")
-            with feedback_cols[2]:
-                st.button("⭐⭐⭐", key="feedback_3")
-            with feedback_cols[3]:
-                st.button("⭐⭐⭐⭐", key="feedback_4")
-            with feedback_cols[4]:
-                st.button("⭐⭐⭐⭐⭐", key="feedback_5")
-            
-            # Start new session
+            for i, stars in enumerate(["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"], 1):
+                with feedback_cols[i - 1]:
+                    st.button(stars, key=f"feedback_{i}")
+
+            # ── New session ───────────────────────────────────────────────────
             st.markdown("---")
             if st.button("🔄 Start New Learning Session", key="chat_new_session", use_container_width=True):
-                st.session_state.chat_query = None
-                st.session_state.chat_current_label = None
-                st.session_state.chat_current_purpose = None
-                st.session_state.chat_purpose_confirmed = False
-                st.session_state.chat_show_purpose_editor = False
-                st.session_state.chat_show_generated_content = False
-                st.session_state.chat_generated_content = None
-                st.session_state.generate_word = False
-                st.session_state.generate_pdf = False
+                for key in [
+                    'chat_query', 'chat_current_label', 'chat_current_purpose',
+                    'chat_purpose_confirmed', 'chat_show_purpose_editor',
+                    'chat_show_generated_content', 'chat_generated_content',
+                    'chat_learning_path', 'chat_purpose_identifier',
+                    'generate_word', 'generate_pdf'
+                ]:
+                    st.session_state[key] = None if 'show' not in key and 'confirmed' not in key else False
                 st.rerun()
-
 
 # Tab 4: History
 with tab4:

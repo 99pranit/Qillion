@@ -28,7 +28,7 @@ class identifyPurpose:
         )
         print("API setup successful")
         
-    def get_topics(self):
+    def get_purpose(self):
         chat_completion = self.client.chat.completions.create(
             messages=[
                 {

@@ -28,7 +28,7 @@ class identifyPurpose:
         )
         print("API setup successful")
         
-    def get_purpose(self):
+    def get_topics(self):
         chat_completion = self.client.chat.completions.create(
             messages=[
                 {
@@ -52,7 +52,7 @@ class identifyPurpose:
                     User Intent:""",
                 }
             ],
-            model="openai/gpt-oss-120b",
+            model=self.model_name,
         )
         reply = chat_completion.choices[0].message.content.lower()
 
